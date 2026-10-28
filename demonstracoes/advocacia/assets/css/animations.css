@@ -1,0 +1,85 @@
+/**
+ * ==============================================================================
+ * MARTINS | ADVOCACIA - ANIMAÇÕES & MICROINTERAÇÕES
+ * ==============================================================================
+ * 
+ * Animações otimizadas com transform e opacity (60fps), respeitando
+ * a preferência do usuário por movimento reduzido (prefers-reduced-motion).
+ * ==============================================================================
+ */
+
+/* Entrada suave vertical */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Entrada sutil da direita */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulsação sutil no badge de atendimento */
+@keyframes pulseSubtle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(166, 127, 89, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(166, 127, 89, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(166, 127, 89, 0);
+  }
+}
+
+/* Classes para gatilho de animação via JavaScript (Intersection Observer) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Atrasos escalonados para listas de cards e métricas */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+/* Animação do botão WhatsApp */
+.floating-contact-btn {
+  animation: pulseSubtle 3s infinite ease-in-out;
+}
+
+/* Acessibilidade: respeitar usuários com sensibilidade a movimentos */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

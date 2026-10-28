@@ -1,0 +1,112 @@
+/* Contexto e navegação da demonstração; o aplicativo original não é executado. */
+:root {
+  --demo-bar-height: 68px;
+}
+html {
+  scroll-padding-top: calc(var(--header-height) + 20px);
+}
+.demo-banner {
+  position: relative;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: var(--demo-bar-height);
+  padding: 12px 28px;
+  background: #173b36;
+  color: #f7f4ee;
+  font-family: var(--font-sans);
+}
+.demo-banner strong,
+.demo-banner span {
+  display: block;
+}
+.demo-banner strong {
+  font-size: 12px;
+}
+.demo-banner span {
+  margin-top: 2px;
+  color: #ddd9ce;
+  font-size: 11px;
+}
+.demo-banner > a {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: 1px solid #a67f59;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.demo-page .site-header {
+  top: 0;
+}
+.demo-page .reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+.demo-page button:disabled {
+  opacity: 1;
+  cursor: default;
+  pointer-events: none;
+}
+.demo-page a[aria-disabled='true'] {
+  cursor: default;
+  pointer-events: none;
+}
+.demo-page .floating-contact-btn {
+  animation: none;
+}
+.demo-page .practice-card {
+  cursor: default;
+}
+.demo-mobile-nav {
+  display: none;
+  position: relative;
+}
+.demo-mobile-nav > summary {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  font: 500 13px var(--font-sans);
+}
+.demo-mobile-nav nav {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(260px, calc(100vw - 40px));
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg-primary);
+  box-shadow: var(--shadow-card);
+}
+.demo-mobile-nav nav a {
+  display: block;
+  padding: 12px;
+  font-size: 13px;
+}
+@media (max-width: 860px) {
+  .demo-page .header-action {
+    display: none;
+  }
+  .demo-mobile-nav {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --demo-bar-height: 88px;
+  }
+  .demo-banner {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .demo-banner strong,
+  .demo-banner > a {
+    font-size: 11px;
+  }
+  .demo-banner span {
+    font-size: 10px;
+  }
+}
