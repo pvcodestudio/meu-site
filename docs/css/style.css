@@ -446,6 +446,7 @@ svg {
     border-color 0.2s;
 }
 .button-primary {
+  border-radius: 999px;
   border: 1px solid #83a6ff70;
   background: var(--button);
   color: #fff;
@@ -1471,6 +1472,7 @@ svg {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    border-radius: 999px;
     background: var(--button);
     color: #fff;
   }
