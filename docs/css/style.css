@@ -366,18 +366,6 @@ svg {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-height: 44px;
-  padding: 10px 18px;
-  border: 1px solid #ffffff42;
-  border-radius: 999px;
-  font-size: 12px;
-  transition:
-    border-color 0.2s,
-    background 0.2s;
-}
-.header-cta:hover {
-  border-color: #99b9ff;
-  background: #ffffff08;
 }
 .menu-toggle,
 .mobile-nav {
@@ -445,13 +433,24 @@ svg {
     background 0.2s,
     border-color 0.2s;
 }
-.button-primary {
+.header-cta,
+.button-primary,
+.mobile-nav .mobile-contact {
+  min-height: 52px;
+  padding: 13px 22px;
   border-radius: 999px;
   border: 1px solid #83a6ff70;
   background: var(--button);
   color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
-.button-primary:hover {
+.header-cta:hover,
+.button-primary:hover,
+.mobile-nav .mobile-contact:hover {
   background: #1e4caf;
 }
 .button-text {
@@ -1472,9 +1471,6 @@ svg {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-    border-radius: 999px;
-    background: var(--button);
-    color: #fff;
   }
   .hero-actions {
     gap: 20px;
@@ -1696,12 +1692,9 @@ svg {
     gap: 22px;
     margin-top: 23px;
   }
-  .button {
-    padding-inline: 18px;
-    font-size: 12px;
-  }
   .button-text {
     padding-inline: 0;
+    font-size: 12px;
   }
 
   .hero-bottom {
