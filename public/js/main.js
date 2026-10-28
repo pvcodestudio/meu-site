@@ -5,32 +5,59 @@
 (() => {
   'use strict';
 
-  document.documentElement.classList.add('js-ready');
-
-  // Abertura decorativa: sem JavaScript ou com movimento reduzido, o site abre direto.
+  // A abertura Matrix é parte da identidade escolhida pelo autor.
   const siteLoader = document.querySelector('.site-loader');
-  if (siteLoader && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (
+    siteLoader &&
+    (siteLoader.dataset.matrix === 'always' ||
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  ) {
     const matrix = siteLoader.querySelector('.ai-matrix-loader');
     const digits = document.createDocumentFragment();
-    const digitCount = Math.min(2400,
-      Math.max(1, Math.floor(window.innerWidth / 48)) * Math.ceil(window.innerHeight / 64));
+    const digitCount = Math.min(
+      2400,
+      Math.max(1, Math.floor(window.innerWidth / 48)) * Math.ceil(window.innerHeight / 64)
+    );
     for (let index = 0; index < digitCount; index += 1) {
       const digit = document.createElement('span');
       digit.className = 'digit';
-      digit.textContent = Math.random() < .5 ? '0' : '1';
+      digit.textContent = Math.random() < 0.5 ? '0' : '1';
       digits.append(digit);
     }
-    matrix.querySelectorAll('.digit').forEach(digit => digit.remove());
+    matrix.querySelectorAll('.digit').forEach((digit) => digit.remove());
     matrix.prepend(digits);
     siteLoader.classList.add('is-loading');
+    let dismissed = false;
+    let minimumElapsed = false;
+    let pageLoaded = document.readyState === 'complete';
+    let minimumTimer;
+    let safetyTimer;
     const dismissLoader = () => {
+      if (dismissed) return;
+      dismissed = true;
+      window.clearTimeout(minimumTimer);
+      window.clearTimeout(safetyTimer);
       siteLoader.classList.remove('is-loading');
+      window.removeEventListener('load', onPageLoad);
       window.removeEventListener('keydown', dismissLoader);
       window.removeEventListener('pointerdown', dismissLoader);
       window.setTimeout(() => siteLoader.remove(), 450);
     };
-    window.setTimeout(dismissLoader, 2200);
-    // Quem começa a interagir pode acessar a página imediatamente.
+    const finishWhenReady = () => {
+      if (minimumElapsed && pageLoaded) dismissLoader();
+    };
+    const onPageLoad = () => {
+      pageLoaded = true;
+      finishWhenReady();
+    };
+    // Um ciclo completo torna o efeito visivel em conexoes rapidas.
+    minimumTimer = window.setTimeout(() => {
+      minimumElapsed = true;
+      finishWhenReady();
+    }, 2200);
+    // Um recurso travado nao pode prender a abertura indefinidamente.
+    safetyTimer = window.setTimeout(dismissLoader, 8000);
+    if (!pageLoaded) window.addEventListener('load', onPageLoad, { once: true });
     window.addEventListener('keydown', dismissLoader, { once: true });
     window.addEventListener('pointerdown', dismissLoader, { once: true });
   } else {
@@ -41,36 +68,44 @@
   const editorCode = document.querySelector('.editor-code');
   if (editorCode) {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const codeLines = [...editorCode.children].filter(line => !line.classList.contains('editor-caret'));
-    const codeNodes = codeLines.map(line => {
+    const codeLines = [...editorCode.children].filter(
+      (line) => !line.classList.contains('editor-caret')
+    );
+    const codeNodes = codeLines.map((line) => {
       const walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT);
       const nodes = [];
-      while (walker.nextNode()) nodes.push({ node: walker.currentNode, text: walker.currentNode.textContent });
+      while (walker.nextNode())
+        nodes.push({ node: walker.currentNode, text: walker.currentNode.textContent });
       return nodes;
     });
     let typingTimer;
     let lineIndex = 0;
     let characterIndex = 0;
-    let editorVisible = true;
+    let editorVisible = !('IntersectionObserver' in window);
     if ('IntersectionObserver' in window) {
-      const editorObserver = new IntersectionObserver(entries => {
+      const editorObserver = new IntersectionObserver((entries) => {
         editorVisible = entries[0].isIntersecting;
       });
       editorObserver.observe(editorCode);
     }
     const resetCode = () => {
-      codeNodes.flat().forEach(({ node }) => { node.textContent = ''; });
-      codeLines.forEach(line => line.classList.remove('is-typing'));
+      codeNodes.flat().forEach(({ node }) => {
+        node.textContent = '';
+      });
+      codeLines.forEach((line) => line.classList.remove('is-typing'));
       lineIndex = 0;
       characterIndex = 0;
     };
     const typeCharacter = () => {
-      if (document.hidden || !editorVisible) {
+      if (document.hidden || !editorVisible || siteLoader?.classList.contains('is-loading')) {
         typingTimer = window.setTimeout(typeCharacter, 300);
         return;
       }
-      if (lineIndex === codeLines.length) resetCode();
+      if (lineIndex === codeLines.length) {
+        resetCode();
+      }
       const line = codeLines[lineIndex];
+      codeLines[lineIndex - 1]?.classList.remove('is-typing');
       line.classList.add('is-typing');
       characterIndex += 1;
       let remaining = characterIndex;
@@ -79,24 +114,28 @@
         remaining -= text.length;
       });
       const lineLength = codeNodes[lineIndex].reduce((total, { text }) => total + text.length, 0);
-      let delay = 35;
+      const character = codeNodes[lineIndex].map(({ text }) => text).join('')[characterIndex - 1];
+      let delay = /[>.;]/.test(character) ? 110 : 40;
       if (characterIndex >= lineLength) {
         lineIndex += 1;
         characterIndex = 0;
         delay = lineIndex === codeLines.length ? 2200 : 180;
-        if (lineIndex < codeLines.length) line.classList.remove('is-typing');
       }
       typingTimer = window.setTimeout(typeCharacter, delay);
     };
     const setTypingMotion = () => {
       window.clearTimeout(typingTimer);
-      codeLines.forEach(line => line.classList.remove('is-typing'));
-      editorCode.classList.toggle('is-animating', !motionPreference.matches);
-      if (motionPreference.matches) {
-        codeNodes.flat().forEach(({ node, text }) => { node.textContent = text; });
+      codeLines.forEach((line) => line.classList.remove('is-typing'));
+      // O atributo preserva a digitação contínua solicitada para a primeira tela.
+      const typingEnabled = editorCode.dataset.typing === 'always' || !motionPreference.matches;
+      editorCode.classList.toggle('is-animating', typingEnabled);
+      if (!typingEnabled) {
+        codeNodes.flat().forEach(({ node, text }) => {
+          node.textContent = text;
+        });
       } else {
         resetCode();
-        typingTimer = window.setTimeout(typeCharacter, siteLoader?.isConnected ? 2400 : 350);
+        typingTimer = window.setTimeout(typeCharacter, 120);
       }
     };
     motionPreference.addEventListener('change', setTypingMotion);
@@ -122,11 +161,11 @@
     setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
   });
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
+  mobileMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => setMenuOpen(false));
   });
 
-  document.addEventListener('keydown', event => {
+  document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
       setMenuOpen(false);
       menuButton.focus();
@@ -134,46 +173,35 @@
   });
 
   // O menu mobile não deve permanecer aberto depois que a tela aumenta.
-  window.matchMedia('(min-width: 1001px)').addEventListener('change', event => {
+  window.matchMedia('(min-width: 1001px)').addEventListener('change', (event) => {
     if (event.matches) setMenuOpen(false);
   });
-
-  // Mostra as seções delicadamente ao entrar na área visível.
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      });
-    }, { threshold: .08, rootMargin: '0px 0px 30px 0px' });
-    document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
-  } else {
-    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
-  }
 
   // Evidencia a seção correspondente ao rolar a página.
   const navLinks = [...document.querySelectorAll('.desktop-nav a')];
   if ('IntersectionObserver' in window) {
-    const navObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach(link => {
-          const active = link.getAttribute('href') === `#${entry.target.id}`;
-          link.classList.toggle('is-active', active);
-          if (active) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => {
+            const active = link.getAttribute('href') === `#${entry.target.id}`;
+            link.classList.toggle('is-active', active);
+            if (active) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+          });
         });
-      });
-    }, { rootMargin: '-18% 0px -63% 0px' });
-    ['inicio', 'projetos', 'servicos', 'sobre'].forEach(id => {
+      },
+      { rootMargin: '-18% 0px -63% 0px' }
+    );
+    ['inicio', 'projetos', 'servicos', 'sobre'].forEach((id) => {
       const section = document.getElementById(id);
       if (section) navObserver.observe(section);
     });
   }
 
   // Quando a pessoa vem do card de serviço, já seleciona a opção do formulário.
-  document.querySelectorAll('[data-project-type]').forEach(link => {
+  document.querySelectorAll('[data-project-type]').forEach((link) => {
     link.addEventListener('click', () => {
       document.getElementById('projectType').value = link.dataset.projectType;
     });
@@ -187,7 +215,7 @@
   }
 
   // Apaga o aviso anterior e remove a indicação de erro quando o campo muda.
-  contactForm.querySelectorAll('input,select,textarea').forEach(field => {
+  contactForm.querySelectorAll('input,select,textarea').forEach((field) => {
     field.addEventListener('input', () => {
       field.removeAttribute('aria-invalid');
       if (formStatus.dataset.state === 'error') {
@@ -198,11 +226,11 @@
   });
 
   let submissionKey = crypto.randomUUID();
-  contactForm.addEventListener('submit', async event => {
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!contactForm.checkValidity()) {
-      contactForm.querySelectorAll('[required]').forEach(field => {
+      contactForm.querySelectorAll('[required]').forEach((field) => {
         if (!field.validity.valid) field.setAttribute('aria-invalid', 'true');
       });
       contactForm.reportValidity();
@@ -230,21 +258,31 @@
 
       if (!response.ok) {
         if (response.status === 503 || response.status === 404) {
-          throw new Error('O recebimento de solicitações ainda está sendo preparado. Tente novamente mais tarde.');
+          throw new Error(
+            'O recebimento de solicitações ainda está sendo preparado. Tente novamente mais tarde.'
+          );
         }
         if (response.status === 429) {
-          throw new Error('Muitas tentativas em pouco tempo. Aguarde alguns minutos e tente novamente.');
+          throw new Error(
+            'Muitas tentativas em pouco tempo. Aguarde alguns minutos e tente novamente.'
+          );
         }
-        throw new Error(data.message || 'Não foi possível enviar agora. Tente novamente em instantes.');
+        throw new Error(
+          data.message || 'Não foi possível enviar agora. Tente novamente em instantes.'
+        );
       }
 
       contactForm.reset();
       submissionKey = crypto.randomUUID();
-      showStatus('success', data.message || 'Solicitação recebida! Responderei pelo contato informado.');
+      showStatus(
+        'success',
+        data.message || 'Solicitação recebida! Responderei pelo contato informado.'
+      );
     } catch (error) {
-      const message = error instanceof TypeError
-        ? 'Não foi possível conectar ao servidor. Confira sua conexão e tente novamente.'
-        : error.message;
+      const message =
+        error instanceof TypeError
+          ? 'Não foi possível conectar ao servidor. Confira sua conexão e tente novamente.'
+          : error.message;
       showStatus('error', message);
     } finally {
       submitButton.disabled = false;

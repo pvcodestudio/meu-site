@@ -1,0 +1,126 @@
+/* Base visual compartilhada pelas duas interfaces.
+   Altere as variáveis abaixo antes de mexer em dezenas de seletores. */
+:root {
+  color-scheme: dark;
+  --bg: #101214;
+  --bg-deep: #0c0e0f;
+  --surface: #181b1e;
+  --surface-soft: #1e2225;
+  --surface-hover: #272a2e;
+  --stroke: #33373b;
+  --stroke-soft: #282c2f;
+  --text: #f2f1ed;
+  --muted: #9ea2a5;
+  --gold: #d7a75f;
+  --gold-bright: #f2c681;
+  --gold-faint: rgba(215, 167, 95, 0.12);
+  --success: #92bc9f;
+  --danger: #dca291;
+  --font-body: 'DM Sans', Arial, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --radius: 12px;
+  --sidebar-width: 252px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+p,
+blockquote {
+  margin-top: 0;
+}
+h2 {
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+  flex-shrink: 0;
+}
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+}
+.page-content {
+  min-width: 0;
+}
+.eyebrow,
+.overline {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+.mobile-menu,
+.mobile-brand,
+.mobile-tabbar,
+.mobile-booking-summary {
+  display: none;
+}
+.no-script {
+  background: #49321c;
+  padding: 15px;
+  text-align: center;
+}
+[hidden] {
+  display: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

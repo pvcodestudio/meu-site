@@ -5,7 +5,7 @@ fetch('/api/privacy', { cache: 'no-store' })
     return response.json();
   })
   .then((info) => {
-    document.getElementById('retention-days').textContent = String(info.retentionDays);
+    document.getElementById('retention-days').textContent = `${info.retentionDays} dias`;
     if (info.contactEmail) {
       const contact = document.getElementById('privacy-contact');
       const link = document.createElement('a');
@@ -19,6 +19,7 @@ fetch('/api/privacy', { cache: 'no-store' })
     }
   })
   .catch(() => {
+    document.getElementById('retention-days').textContent = 'prazo temporariamente indisponível';
     document.getElementById('privacy-contact').textContent =
       'Não foi possível consultar o contato de privacidade. Tente novamente mais tarde.';
   });

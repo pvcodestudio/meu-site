@@ -1,0 +1,123 @@
+/* Apresentação estática do RAR: faixa de contexto e navegação por âncoras. */
+:root {
+  --demo-bar-height: 64px;
+}
+.demo-banner {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  height: var(--demo-bar-height);
+  padding: 9px 24px;
+  border-bottom: 1px solid #565044;
+  background: #181613;
+  color: #eee5d7;
+}
+.demo-banner strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.demo-banner span {
+  display: block;
+  color: #c9bfad;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.demo-banner > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #9c8056;
+  border-radius: 5px;
+  color: #f2d09a;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.demo-page .app-shell {
+  min-height: calc(100dvh - var(--demo-bar-height));
+}
+.demo-page .sidebar {
+  top: var(--demo-bar-height);
+  height: calc(100dvh - var(--demo-bar-height));
+}
+.demo-page button:disabled {
+  opacity: 1;
+  cursor: default;
+  pointer-events: none;
+}
+.demo-page .service-card,
+.demo-page .barber-card,
+.demo-page .date-pill,
+.demo-page .time-slot {
+  cursor: default;
+}
+.demo-page .service-card:hover,
+.demo-page .barber-card:hover {
+  transform: none;
+}
+.demo-page .time-slot {
+  display: grid;
+  place-items: center;
+}
+html {
+  scroll-padding-top: calc(var(--demo-bar-height) + 20px);
+}
+@media (max-width: 850px) {
+  .demo-page .sidebar {
+    display: none;
+  }
+}
+@media (max-width: 630px) {
+  :root {
+    --demo-bar-height: 86px;
+  }
+  .demo-banner {
+    gap: 12px;
+    padding-inline: 14px;
+  }
+  .demo-banner span {
+    font-size: 10px;
+  }
+  .demo-banner > a {
+    padding-inline: 9px;
+    font-size: 10px;
+  }
+}
+
+/* Seções do site original reunidas para visualização, sem abrir o aplicativo ou seu backend. */
+.demo-page .booking-layout > :is(.home-page, .service-catalog, .experience-section, .shop-info) {
+  padding-bottom: 40px;
+  margin-bottom: 12px;
+}
+.demo-page .demo-booking-hero {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 12px;
+  border-radius: var(--radius);
+}
+.demo-page .demo-booking-hero h2 {
+  margin: 0 0 12px;
+  font: 600 clamp(38px, 4vw, 60px)/1.1 var(--font-display);
+}
+.demo-page .catalog-card-footer button {
+  font-size: 12px;
+}
+.demo-page .gallery-photo:disabled {
+  display: block;
+  width: 100%;
+}
+.demo-page a[aria-disabled='true'] {
+  cursor: default;
+}
+@media (max-width: 630px) {
+  .demo-page .demo-booking-hero h2 {
+    font-size: 38px;
+    max-width: 255px;
+  }
+}

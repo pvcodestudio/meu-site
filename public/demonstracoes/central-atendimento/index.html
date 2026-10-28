@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#155e75" />
+    <meta
+      name="description"
+      content="Demonstração visual da Central de Atendimento, com marca, contatos e mensagens fictícios."
+    />
+    <title>Nexo Atendimento — demonstração visual | PVcoding Studio</title>
+    <link rel="icon" type="image/svg+xml" href="logo-ficticio.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="demonstracao.css?v=texto-alinhado-20261025" />
+    <script src="demo.js?v=tema-escuro-20261025" defer></script>
+  </head>
+  <body class="demo-page dark">
+    <header class="demo-banner">
+      <div>
+        <strong>Demonstração visual</strong
+        ><span id="demo-notice"
+          >Marca, contatos e mensagens fictícios. Nenhum dado é enviado ou salvo.</span
+        >
+      </div>
+      <a href="/#projetos">Voltar ao portfólio</a>
+    </header>
+    <!-- Contêiner exigido pelos estilos e pontos de quebra do layout original. -->
+    <div id="authenticatedApp">
+      <header class="topbar">
+        <div class="brand-area">
+          <div class="brand-logo-shell">
+            <img src="logo-ficticio.svg" width="72" height="72" alt="Nexo, marca fictícia" />
+          </div>
+          <div>
+            <p id="brandCompanyName" class="eyebrow">Nexo · Empresa fictícia</p>
+            <h1>Central de Atendimento</h1>
+            <p class="subtitle">Organização e cuidado em cada conversa.</p>
+          </div>
+        </div>
+        <div class="header-nav-wrap">
+          <nav id="workspaceTabs" class="tabs" role="tablist" aria-label="Áreas da demonstração">
+            <button
+              id="tab-mensagens"
+              class="tab active"
+              type="button"
+              role="tab"
+              aria-controls="view-mensagens"
+              aria-selected="true"
+              tabindex="0"
+              data-tab="mensagens"
+            >
+              Mensagens</button
+            ><button
+              id="tab-contatos"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-contatos"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="contatos"
+            >
+              Contatos</button
+            ><button
+              id="tab-acessos"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-acessos"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="acessos"
+            >
+              Acessos</button
+            ><button
+              id="tab-orientacoes"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-orientacoes"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="orientacoes"
+            >
+              Orientações</button
+            ><button
+              id="tab-conclusao"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-conclusao"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="conclusao"
+            >
+              Conclusão</button
+            ><button
+              id="tab-anotacoes"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-anotacoes"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="anotacoes"
+            >
+              Anotações</button
+            ><button
+              id="tab-checklists"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-checklists"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="checklists"
+            >
+              Checklists</button
+            ><button
+              id="tab-integracoes"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-integracoes"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="sonar"
+            >
+              Integrações</button
+            ><button
+              id="tab-email"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-email"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="email"
+            >
+              E-mail</button
+            ><button
+              id="tab-historico"
+              class="tab"
+              type="button"
+              role="tab"
+              aria-controls="view-historico"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="historico"
+            >
+              Histórico
+            </button>
+          </nav>
+        </div>
+        <div class="header-actions">
+          <span class="profile-avatar" aria-hidden="true">M</span
+          ><span class="user-badge">Marina · Exemplo</span>
+        </div>
+      </header>
+      <main class="layout">
+        <aside class="panel form-panel" aria-labelledby="attendance-title">
+          <div class="section-title-row">
+            <h2 id="attendance-title">Dados do atendimento</h2>
+            <button
+              class="btn secondary"
+              type="button"
+              data-demo-action=""
+              disabled=""
+              aria-describedby="demo-notice"
+            >
+              Limpar
+            </button>
+          </div>
+          <div class="form-grid">
+            <label
+              >Período<select disabled="" aria-describedby="demo-notice">
+                <option>Bom dia</option>
+              </select></label
+            >
+            <label
+              >Nome do cliente<input value="Alex · Cliente fictício" readonly="" autocomplete="off"
+            /></label>
+            <label>Cidade<input value="Cidade Exemplo" readonly="" autocomplete="off" /></label>
+            <label
+              >Número do protocolo<input value="DEMO-001" readonly="" autocomplete="off"
+            /></label>
+            <label
+              >Acesso remoto<input value="Somente ilustração" readonly="" autocomplete="off"
+            /></label>
+            <label
+              >Telefone / WhatsApp<input value="(00) 00000-0000" readonly="" autocomplete="off"
+            /></label>
+            <label class="full-width"
+              >Relato do cliente<textarea rows="5" readonly="">
+Cliente fictício solicitou orientação sobre o painel de pedidos. Exemplo criado apenas para a demonstração visual.</textarea>
+            </label>
+          </div>
+          <div class="generated-box">
+            <div class="section-title-row">
+              <h3>Registro pronto</h3>
+              <button
+                class="btn secondary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                Editar
+              </button>
+            </div>
+            <pre aria-label="Registro fictício">
+Protocolo: DEMO-001
+Cliente: Alex · Exemplo fictício
+Responsável: Marina
+Pedido: orientação sobre o painel.
+Situação ilustrativa: em acompanhamento.</pre>
+            <div class="registro-footer">
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                Concluir e salvar</button
+              ><button
+                class="btn secondary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+          <p class="demo-footnote">
+            Todos os campos são apenas exemplos de aparência. Não preencha dados pessoais nesta
+            apresentação.
+          </p>
+        </aside>
+        <section class="workspace" aria-label="Conteúdo da demonstração">
+          <section id="view-mensagens" role="tabpanel" aria-labelledby="tab-mensagens" tabindex="0">
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Mensagens e scripts</h2>
+                <p>Textos criados para esta demonstração. As ações são apenas ilustrativas.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                + Novo modelo
+              </button>
+            </div>
+            <div class="search-wrap">
+              <input
+                type="search"
+                aria-label="Busca ilustrativa"
+                placeholder="Buscar mensagem, modelo ou contato..."
+                readonly=""
+              /><span class="search-hint" aria-hidden="true">⌕</span>
+            </div>
+            <p class="demo-message-count">4 exemplos fictícios</p>
+            <div class="cards">
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Primeiro contato</h3>
+                  <span class="card-tag">Mensagens</span>
+                </div>
+                <p class="card-text">
+                  Olá, Alex! Sou Marina, da Nexo Atendimento. Como posso ajudar você hoje? Este é um
+                  exemplo fictício para apresentar a interface.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Confirmação da solicitação</h3>
+                  <span class="card-tag">Mensagens</span>
+                </div>
+                <p class="card-text">
+                  Sua solicitação de exemplo foi recebida. O protocolo ilustrativo é DEMO-001. Vamos
+                  conferir as informações antes de seguir.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Acompanhamento do pedido</h3>
+                  <span class="card-tag">Mensagens</span>
+                </div>
+                <p class="card-text">
+                  Olá, Alex! Passando para compartilhar uma atualização sobre o seu pedido fictício.
+                  A próxima etapa já está descrita no painel de exemplo.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Retorno ao cliente</h3>
+                  <span class="card-tag">Mensagens</span>
+                </div>
+                <p class="card-text">
+                  Podemos continuar nossa conversa? A equipe de demonstração está disponível para
+                  esclarecer os próximos passos do exemplo.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-contatos"
+            role="tabpanel"
+            aria-labelledby="tab-contatos"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Contatos</h2>
+                <p>Textos criados para esta demonstração. As ações são apenas ilustrativas.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                + Novo modelo
+              </button>
+            </div>
+            <div class="search-wrap">
+              <input
+                type="search"
+                aria-label="Busca ilustrativa"
+                placeholder="Buscar mensagem, modelo ou contato..."
+                readonly=""
+              /><span class="search-hint" aria-hidden="true">⌕</span>
+            </div>
+            <p class="demo-message-count">3 exemplos fictícios</p>
+            <div class="cards">
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Equipe de suporte</h3>
+                  <span class="card-tag">Contatos</span>
+                </div>
+                <p class="card-text">
+                  Nexo Atendimento · Empresa fictícia suporte@nexo.example Telefone ilustrativo:
+                  (00) 00000-0000
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Relacionamento</h3>
+                  <span class="card-tag">Contatos</span>
+                </div>
+                <p class="card-text">
+                  Equipe fictícia de relacionamento relacionamento@nexo.example Horário ilustrativo:
+                  segunda a sexta, das 9h às 18h.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Contato do exemplo</h3>
+                  <span class="card-tag">Contatos</span>
+                </div>
+                <p class="card-text">
+                  Alex · Cliente fictício cliente@example.com Nenhum contato desta apresentação
+                  representa uma pessoa atendida.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-acessos"
+            role="tabpanel"
+            aria-labelledby="tab-acessos"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Acessos</h2>
+                <p>Textos criados para esta demonstração. As ações são apenas ilustrativas.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                + Novo modelo
+              </button>
+            </div>
+            <div class="search-wrap">
+              <input
+                type="search"
+                aria-label="Busca ilustrativa"
+                placeholder="Buscar mensagem, modelo ou contato..."
+                readonly=""
+              /><span class="search-hint" aria-hidden="true">⌕</span>
+            </div>
+            <p class="demo-message-count">3 exemplos fictícios</p>
+            <div class="cards">
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Orientação de acesso</h3>
+                  <span class="card-tag">Acessos</span>
+                </div>
+                <p class="card-text">
+                  Use apenas o ambiente de exemplo para conhecer o visual. Esta apresentação não
+                  contém credenciais nem permite acessar outros sistemas.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Acesso remoto ilustrativo</h3>
+                  <span class="card-tag">Acessos</span>
+                </div>
+                <p class="card-text">
+                  Identificador de exemplo: DEMO-REMOTO Não existe sessão remota ou conexão com o
+                  dispositivo de um cliente.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Ambiente de treinamento</h3>
+                  <span class="card-tag">Acessos</span>
+                </div>
+                <p class="card-text">
+                  Plataforma fictícia: Painel Aurora Perfil ilustrativo: atendimento As informações
+                  são apenas texto de demonstração.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-orientacoes"
+            role="tabpanel"
+            aria-labelledby="tab-orientacoes"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Orientações</h2>
+                <p>Textos criados para esta demonstração. As ações são apenas ilustrativas.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                + Novo modelo
+              </button>
+            </div>
+            <div class="search-wrap">
+              <input
+                type="search"
+                aria-label="Busca ilustrativa"
+                placeholder="Buscar mensagem, modelo ou contato..."
+                readonly=""
+              /><span class="search-hint" aria-hidden="true">⌕</span>
+            </div>
+            <p class="demo-message-count">3 exemplos fictícios</p>
+            <div class="cards">
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Organização do pedido</h3>
+                  <span class="card-tag">Orientações</span>
+                </div>
+                <p class="card-text">
+                  Antes de continuar o atendimento fictício, confira o resumo do pedido e confirme
+                  com o cliente de exemplo se a dúvida foi compreendida.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Próximos passos</h3>
+                  <span class="card-tag">Orientações</span>
+                </div>
+                <p class="card-text">
+                  Alex, o próximo passo do exemplo é consultar o painel ilustrativo e verificar as
+                  informações exibidas. Não há uma ação real a ser realizada.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Retorno combinado</h3>
+                  <span class="card-tag">Orientações</span>
+                </div>
+                <p class="card-text">
+                  O retorno deste cenário foi combinado para o próximo período. O texto é fictício e
+                  não gera notificações ou compromissos.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-conclusao"
+            role="tabpanel"
+            aria-labelledby="tab-conclusao"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Conclusão</h2>
+                <p>Textos criados para esta demonstração. As ações são apenas ilustrativas.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                + Novo modelo
+              </button>
+            </div>
+            <div class="search-wrap">
+              <input
+                type="search"
+                aria-label="Busca ilustrativa"
+                placeholder="Buscar mensagem, modelo ou contato..."
+                readonly=""
+              /><span class="search-hint" aria-hidden="true">⌕</span>
+            </div>
+            <p class="demo-message-count">3 exemplos fictícios</p>
+            <div class="cards">
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Atendimento concluído</h3>
+                  <span class="card-tag">Conclusão</span>
+                </div>
+                <p class="card-text">
+                  Alex, encerramos o atendimento de exemplo. Obrigado pela conversa! A equipe
+                  fictícia Nexo segue à disposição.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Resumo do atendimento</h3>
+                  <span class="card-tag">Conclusão</span>
+                </div>
+                <p class="card-text">
+                  Protocolo: DEMO-001 Pedido fictício: orientação sobre o painel. Resultado
+                  ilustrativo: dúvida esclarecida.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-head">
+                  <h3 class="card-title">Mensagem de agradecimento</h3>
+                  <span class="card-tag">Conclusão</span>
+                </div>
+                <p class="card-text">
+                  Agradecemos por conhecer esta demonstração. Os textos foram criados para
+                  apresentar a organização e a aparência do projeto.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Copiar</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar</button
+                  ><button
+                    class="btn danger"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-anotacoes"
+            role="tabpanel"
+            aria-labelledby="tab-anotacoes"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Anotações</h2>
+                <p>Notas fictícias para apresentar a organização do espaço de trabalho.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                + Nova anotação
+              </button>
+            </div>
+
+            <div class="notes-grid">
+              <article class="note-card">
+                <div class="note-card-head">
+                  <div>
+                    <h3>Conversa sobre o Painel Aurora</h3>
+                    <time datetime="2026-10-25">25 de outubro de 2026 · Exemplo</time>
+                  </div>
+                  <span class="note-badge">Exemplo</span>
+                </div>
+                <p class="note-text">
+                  Alex gostaria de conhecer a organização das informações no painel fictício. O
+                  próximo contato do cenário será para apresentar as opções de visualização.
+                </p>
+                <div class="note-actions">
+                  <button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Abrir anotação</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar
+                  </button>
+                </div>
+              </article>
+              <article class="note-card">
+                <div class="note-card-head">
+                  <div>
+                    <h3>Passagem de atendimento</h3>
+                    <time datetime="2026-10-25">25 de outubro de 2026 · Exemplo</time>
+                  </div>
+                  <span class="note-badge">Exemplo</span>
+                </div>
+                <p class="note-text">
+                  A equipe de exemplo já revisou o pedido DEMO-002. As informações deste cartão são
+                  fictícias e não foram importadas de atendimentos reais.
+                </p>
+                <div class="note-actions">
+                  <button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Abrir anotação</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-checklists"
+            role="tabpanel"
+            aria-labelledby="tab-checklists"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Checklists</h2>
+                <p>Procedimentos ilustrativos, sem salvar ou alterar informações.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                + Novo checklist
+              </button>
+            </div>
+
+            <div class="checklists-grid">
+              <article class="checklist-card">
+                <div class="checklist-card-head">
+                  <div>
+                    <h3>Primeiro atendimento</h3>
+                    <time datetime="2026-10-25">Procedimento demonstrativo</time>
+                  </div>
+                  <span class="checklist-progress-label">1 / 3</span>
+                </div>
+                <ul class="demo-check-items">
+                  <li>
+                    <input
+                      type="checkbox"
+                      disabled=""
+                      checked=""
+                      aria-label="Ler o pedido de exemplo"
+                    /><span>Ler o pedido de exemplo</span>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      disabled=""
+                      aria-label="Confirmar o objetivo da conversa"
+                    /><span>Confirmar o objetivo da conversa</span>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      disabled=""
+                      aria-label="Organizar os próximos passos"
+                    /><span>Organizar os próximos passos</span>
+                  </li>
+                </ul>
+                <div class="card-actions">
+                  <button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Abrir checklist</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar
+                  </button>
+                </div>
+              </article>
+              <article class="checklist-card">
+                <div class="checklist-card-head">
+                  <div>
+                    <h3>Encerramento do pedido</h3>
+                    <time datetime="2026-10-25">Procedimento demonstrativo</time>
+                  </div>
+                  <span class="checklist-progress-label">1 / 3</span>
+                </div>
+                <ul class="demo-check-items">
+                  <li>
+                    <input
+                      type="checkbox"
+                      disabled=""
+                      checked=""
+                      aria-label="Revisar o resumo fictício"
+                    /><span>Revisar o resumo fictício</span>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      disabled=""
+                      aria-label="Esclarecer a dúvida do exemplo"
+                    /><span>Esclarecer a dúvida do exemplo</span>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      disabled=""
+                      aria-label="Preparar a mensagem final"
+                    /><span>Preparar a mensagem final</span>
+                  </li>
+                </ul>
+                <div class="card-actions">
+                  <button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Abrir checklist</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Editar
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-integracoes"
+            role="tabpanel"
+            aria-labelledby="tab-integracoes"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Integrações</h2>
+                <p>Aparência das conexões do sistema. Nenhuma conta ou serviço está conectado.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                Adicionar integração
+              </button>
+            </div>
+
+            <div class="demo-preview-grid">
+              <article class="panel">
+                <span class="email-status disconnected">Não conectado</span>
+                <h3>Caixa de e-mail</h3>
+                <p>Exemplo visual de como uma integração pode aparecer na Central.</p>
+                <button
+                  class="btn secondary"
+                  type="button"
+                  data-demo-action=""
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  Configurar conexão
+                </button>
+              </article>
+              <article class="panel">
+                <span class="email-status disconnected">Não conectado</span>
+                <h3>Ferramentas da equipe</h3>
+                <p>
+                  Área fictícia de configurações. Nenhuma credencial, chave ou endereço de serviço é
+                  utilizado.
+                </p>
+                <button
+                  class="btn secondary"
+                  type="button"
+                  data-demo-action=""
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  Ver configurações
+                </button>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-email"
+            role="tabpanel"
+            aria-labelledby="tab-email"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Caixa de e-mail</h2>
+                <p>
+                  Caixa ilustrativa com endereços e mensagens fictícios. Não envia nem recebe
+                  e-mails.
+                </p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                Novo e-mail
+              </button>
+            </div>
+
+            <div class="email-toolbar">
+              <div>
+                <strong>marina@nexo.example</strong><span>Conta fictícia · Caixa de exemplo</span>
+              </div>
+              <div class="email-toolbar-actions">
+                <button
+                  class="btn secondary"
+                  type="button"
+                  data-demo-action=""
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  Atualizar</button
+                ><button
+                  class="btn primary"
+                  type="button"
+                  data-demo-action=""
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  Novo e-mail
+                </button>
+              </div>
+            </div>
+            <div class="email-client-layout">
+              <aside class="email-list-pane" aria-label="Mensagens de exemplo">
+                <div class="email-list-heading">
+                  <strong>Caixa de entrada</strong><span>3 exemplos</span>
+                </div>
+                <div class="email-messages-list">
+                  <div class="email-message-item active unread">
+                    <div class="email-message-top">
+                      <strong>Alex · Cliente fictício</strong><time>10:25</time>
+                    </div>
+                    <span class="email-message-subject">Dúvida sobre o painel</span>
+                  </div>
+                  <div class="email-message-item">
+                    <div class="email-message-top">
+                      <strong>Equipe de exemplo</strong><time>09:10</time>
+                    </div>
+                    <span class="email-message-subject">Resumo da apresentação</span>
+                  </div>
+                  <div class="email-message-item">
+                    <div class="email-message-top">
+                      <strong>Projeto Aurora</strong><time>Ontem</time>
+                    </div>
+                    <span class="email-message-subject">Informações do cenário</span>
+                  </div>
+                </div>
+              </aside>
+              <article class="email-reader-pane">
+                <div class="email-reader-content">
+                  <header class="email-reader-header">
+                    <div class="email-reader-title-row">
+                      <h3>Dúvida sobre o painel</h3>
+                      <div class="email-reader-actions">
+                        <button
+                          class="btn secondary"
+                          type="button"
+                          data-demo-action=""
+                          disabled=""
+                          aria-describedby="demo-notice"
+                        >
+                          Responder
+                        </button>
+                      </div>
+                    </div>
+                    <div class="email-reader-meta">
+                      <strong>De:</strong><span>Alex &lt;cliente@example.com&gt;</span>
+                    </div>
+                    <div class="email-reader-meta">
+                      <strong>Para:</strong><span>Marina &lt;marina@nexo.example&gt;</span>
+                    </div>
+                    <div class="email-reader-meta">
+                      <span>Mensagem fictícia · 25 de outubro de 2026</span>
+                    </div>
+                  </header>
+                  <div class="email-reader-body">
+                    <p>Olá, Marina!</p>
+                    <p>
+                      Gostaria de conhecer melhor a organização das informações no painel de
+                      exemplo. Você pode me explicar como as etapas aparecem na tela?
+                    </p>
+                    <p>Obrigado pela atenção,<br />Alex · Cliente fictício</p>
+                    <p class="demo-footnote">
+                      Esta mensagem foi escrita exclusivamente para a apresentação visual do
+                      projeto.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="view-historico"
+            role="tabpanel"
+            aria-labelledby="tab-historico"
+            tabindex="0"
+            hidden=""
+          >
+            <div class="workspace-toolbar">
+              <div class="workspace-heading">
+                <h2>Histórico de atendimentos</h2>
+                <p>Registros inventados para mostrar a composição da lista.</p>
+              </div>
+              <button
+                class="btn primary"
+                type="button"
+                data-demo-action=""
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                Atualizar lista
+              </button>
+            </div>
+
+            <div class="history-list">
+              <article class="history-card">
+                <div class="history-card-head section-title-row">
+                  <div>
+                    <strong>Alex · Cliente fictício</strong><span>DEMO-001 · 25/10/2026</span>
+                  </div>
+                  <span class="history-status">Concluído</span>
+                </div>
+                <p class="history-meta">Responsável: Marina · Equipe fictícia Nexo</p>
+                <p class="history-relato">
+                  Orientação sobre o Painel Aurora. Registro criado apenas para esta demonstração.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Abrir registro</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Continuar atendimento
+                  </button>
+                </div>
+              </article>
+              <article class="history-card">
+                <div class="history-card-head section-title-row">
+                  <div>
+                    <strong>Cliente de exemplo 02</strong><span>DEMO-002 · 25/10/2026</span>
+                  </div>
+                  <span class="history-status">Em acompanhamento</span>
+                </div>
+                <p class="history-meta">Responsável: Marina · Equipe fictícia Nexo</p>
+                <p class="history-relato">
+                  Apresentação dos próximos passos. Registro criado apenas para esta demonstração.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Abrir registro</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Continuar atendimento
+                  </button>
+                </div>
+              </article>
+              <article class="history-card">
+                <div class="history-card-head section-title-row">
+                  <div>
+                    <strong>Cliente de exemplo 03</strong><span>DEMO-003 · 25/10/2026</span>
+                  </div>
+                  <span class="history-status">Concluído</span>
+                </div>
+                <p class="history-meta">Responsável: Marina · Equipe fictícia Nexo</p>
+                <p class="history-relato">
+                  Dúvida ilustrativa sobre um pedido. Registro criado apenas para esta demonstração.
+                </p>
+                <div class="card-actions">
+                  <button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Abrir registro</button
+                  ><button
+                    class="btn secondary"
+                    type="button"
+                    data-demo-action=""
+                    disabled=""
+                    aria-describedby="demo-notice"
+                  >
+                    Continuar atendimento
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+          <p class="demo-footnote">
+            Nexo é uma marca fictícia criada para esta demonstração. Nenhuma informação foi
+            importada de clientes, usuários ou mensagens do sistema original.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

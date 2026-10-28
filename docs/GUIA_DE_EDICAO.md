@@ -8,41 +8,54 @@ O arquivo `public/index.html` contém a estrutura semântica do site:
 
 - `<header>`: logo, menu e botão de contato.
 - `<main>`: conteúdo principal.
-- `<section id="inicio">`: apresentação de Pedro Vitor, chamada e ilustração do editor de código.
-- `<section id="projetos">`: cartões de projetos, cada um criado com `<article>` e uma `<img>`.
+- `<section id="inicio">`: apresentação de Pedro Vitor e editor de código com digitação contínua.
+- `<section id="projetos">`: projetos em linhas alternadas de imagem e contexto, usando `<article>` e `<img>`.
 - `<section id="servicos">`: tipos de site e sistema que você oferece.
-- `<section id="sobre">`: apresentação pessoal e tecnologias.
+- `<section id="sobre">`: assinatura da marca, apresentação pessoal e tecnologias.
 - `<section class="process-section">`: etapas de contratação e desenvolvimento.
 - `<section id="orcamento">`: formulário de contato.
 - `<footer>`: assinatura e explicação do uso dos dados.
 
-Se você quiser criar mais um projeto, copie um bloco `<article class="project-card">...</article>` e altere imagem, nome, texto e índice. Para criar outra tecnologia, insira um `<span>` dentro de `.tech-list`.
+Se você quiser criar mais um projeto, copie um bloco `<article class="project-card">...</article>` e altere imagem, nome, texto e links da captura completa. Para criar outra tecnologia, insira um `<span>` dentro de `.tech-list`.
 
 Os links de navegação como `href="#projetos"` procuram uma seção com `id="projetos"`. Se renomear um ID, ajuste os links correspondentes e a lista de IDs observados em `main.js`.
+
+Cada projeto tem sua própria linha. No segundo, o CSS coloca a imagem à direita; no HTML, a imagem continua antes do contexto. Abaixo de 760px, todos seguem a ordem do documento em uma coluna. As capturas completas abrem em outra aba, sem depender de JavaScript.
+
+A Don Marco Barbearia possui uma demonstração de layout em `public/demonstracoes/don-marco/index.html`. A imagem e o link desse projeto abrem `/demonstracoes/don-marco/`. O conteúdo é estático, sem scripts de agendamento; os botões são desativados e o aviso no topo explica que se trata de uma apresentação visual. Os arquivos do portfólio principal, incluindo Matrix e editor digitando, continuam separados da demonstração.
+
+A Central de Atendimento abre `/demonstracoes/central-atendimento/`, com a marca fictícia Nexo e exemplos próprios. `demo.js` só alterna as abas e o tema; ações do aplicativo ficam desativadas. Para atualizar esta apresentação, edite os textos fictícios do HTML. Não importe armazenamento, banco, configurações, logotipos ou mensagens da aplicação original. O cartão do portfólio usa `central-demonstracao.svg`; a antiga captura foi retirada da pasta pública.
 
 ## CSS: cores e espaçamento
 
 As primeiras linhas de `public/css/style.css` apresentam variáveis CSS (`:root`). Alguns exemplos:
 
 ```css
---bg: #080d15;       /* Cor do fundo geral. */
---blue: #178dff;     /* Azul principal da marca. */
---white: #f4f6f9;    /* Títulos e textos de alto contraste. */
---container: 1220px; /* Largura máxima do conteúdo. */
+--bg: #090c12; /* Cor do fundo geral. */
+--blue: #3467eb; /* Azul da identidade do estúdio. */
+--button: #2459cd; /* Fundo dos botões com texto branco. */
+--text: #f1f4fa; /* Títulos e textos de alto contraste. */
+--container: 1280px; /* Largura máxima do conteúdo. */
 ```
 
-`.hero` e `.hero-layout` cuidam da primeira seção. O layout usa CSS Grid para manter texto à esquerda e ilustração de código à direita no desktop. Os cartões usam `.projects-grid` e `.project-card`. Em telas menores, as regras `@media` convertem tudo em uma coluna. Alterar `padding` e `gap` geralmente é mais seguro do que mexer em posicionamentos absolutos.
+`.hero` e `.hero-layout` cuidam da primeira seção. O layout usa CSS Grid para manter texto à esquerda e o editor digitando à direita no computador. `.hero-visual` reúne o editor e sua pequena prévia. As imagens dos trabalhos ficam na seção de projetos, sem a moldura azul que havia sido rejeitada pelo autor. O portfólio usa `.projects-grid` e `.project-card`; os serviços usam uma lista de linhas em `.services-grid`. Os ajustes para telas menores ficam ao final do arquivo.
 
-O editor de código no topo é uma composição visual feita em HTML e CSS, sem scripts de terceiros. Ele pode ser ajustado ou retirado sem afetar o formulário.
+O editor fica na primeira tela, dentro de `.hero-visual`, e repete a digitação após uma pausa de 2,2 segundos. O bloco `.editor-code` tem uma instrução `prettier-ignore` porque a animação percorre os nós de texto: espaços e quebras de linha dentro das linhas do editor também seriam digitados. Mantenha cada linha visual em um único `<div>`, sem indentação entre seus elementos internos.
+
+O autor pediu para preservar a abertura Matrix verde e a digitação original. Os atributos `data-matrix="always"` e `data-typing="always"` mantêm esses efeitos ativos, inclusive quando o navegador informa movimento reduzido. Sem esses atributos, o modo automático respeita a preferência do navegador. O carregamento pode ser dispensado por clique ou tecla e tem limite de oito segundos para não prender a página.
+
+A fonte Space Grotesk é carregada de `public/assets/fonts/space-grotesk-variable.ttf`, pelo `@font-face` e pelo preload no HTML. A licença está no mesmo diretório. Não há requisição ao Google Fonts durante a navegação. Para trocar a fonte, ajuste o `@font-face`, o preload e a variável `--font` juntos.
+
+Os estilos seguem a ordem das seções, com ajustes para tablet e celular ao final. Faça alterações na regra original, em vez de acrescentar versões concorrentes da mesma regra ao fim do arquivo. Os campos passam a usar texto de 16px no celular para evitar o zoom automático ao receber foco.
 
 ## JavaScript: menu e envio
 
 O `public/js/main.js` é executado apenas quando o HTML terminou de carregar, graças ao atributo `defer`.
 
 - `setMenuOpen()` abre e fecha o menu no celular, atualizando o atributo `aria-expanded`.
-- O primeiro `IntersectionObserver` mostra elementos quando entram na tela.
-- O segundo destaca o link da seção visível na navegação.
-- O clique nos cartões de serviços preenche o tipo de projeto no formulário.
+- Um `IntersectionObserver` evita digitar código quando o editor está fora da tela.
+- Outro destaca o link da seção visível na navegação.
+- O clique nos links dos serviços preenche o tipo de projeto no formulário.
 - A ação `submit` valida os campos e manda os dados por `fetch('/api/orcamento')`.
 - `showStatus()` apresenta confirmação ou erro, conforme a resposta do servidor.
 
@@ -78,7 +91,7 @@ O rodapé aponta para `/privacidade` e `/admin`. O aviso publica apenas o e-mail
 
 ## Checklist antes de apresentar aos clientes
 
-1. Substituir as imagens demonstrativas pelos seus projetos reais e ajustar os textos.
+1. Manter as imagens e descrições alinhadas aos projetos que você quer apresentar.
 2. Definir a conta de e-mail de recebimento no ambiente do servidor.
 3. Executar `npm run check` e testar o envio completo em navegador de computador e celular.
 4. Revisar ortografia, informações comerciais, LGPD e política de privacidade.

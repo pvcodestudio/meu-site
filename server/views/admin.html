@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#080d15" />
+    <title>Configurações do site | PVcoding Studio</title>
+    <link rel="icon" href="/assets/identidade/simbolo-pv-transparente.png" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <script src="/js/admin.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="admin-header">
+      <a class="brand" href="/">pvcoding<span>.</span> <small>STUDIO</small></a>
+      <span>Configurações do site</span>
+      <button id="logout" type="button" hidden>Encerrar sessão</button>
+    </header>
+    <main class="shell" id="conteudo">
+      <div class="intro">
+        <p class="eyebrow">ÁREA ADMINISTRATIVA</p>
+        <h1>Seu estúdio, organizado.</h1>
+        <p>Consulte as solicitações e ajuste os contatos do site.</p>
+      </div>
+      <p id="admin-status" role="status" aria-live="polite"></p>
+
+      <!-- O servidor valida o acesso; o navegador não armazena credenciais. -->
+      <section class="panel login-panel" id="login-panel" aria-labelledby="login-title">
+        <h2 id="login-title">Entre para continuar</h2>
+        <form id="login-form">
+          <label for="username">Usuário</label>
+          <input id="username" name="username" autocomplete="username" required />
+          <label for="password">Senha</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+          <button class="primary" type="submit">Acessar o painel</button>
+        </form>
+      </section>
+
+      <div id="dashboard" hidden>
+        <nav class="tabs" aria-label="Seções do painel">
+          <button
+            id="settings-tab"
+            type="button"
+            aria-pressed="true"
+            aria-controls="settings-panel"
+          >
+            Configurações
+          </button>
+          <button id="quotes-tab" type="button" aria-pressed="false" aria-controls="quotes-panel">
+            Solicitações
+          </button>
+        </nav>
+        <section class="panel" id="settings-panel" aria-labelledby="settings-title">
+          <h2 id="settings-title">Contatos e armazenamento</h2>
+          <form id="settings-form">
+            <div class="fields">
+              <div>
+                <label for="notificationEmail">E-mail para notificações</label>
+                <input
+                  id="notificationEmail"
+                  name="notificationEmail"
+                  type="email"
+                  maxlength="254"
+                  required
+                  aria-describedby="notification-help"
+                />
+                <p class="muted" id="notification-help">
+                  Contato privado que recebe os avisos de novos orçamentos.
+                </p>
+              </div>
+              <div>
+                <label for="privacyEmail">Contato público de privacidade</label>
+                <input
+                  id="privacyEmail"
+                  name="privacyEmail"
+                  type="email"
+                  maxlength="254"
+                  required
+                  aria-describedby="privacy-help"
+                />
+                <p class="muted" id="privacy-help">
+                  Este endereço aparece no aviso de privacidade do site.
+                </p>
+              </div>
+            </div>
+            <label for="retentionDays">Prazo de retenção, em dias</label>
+            <input
+              id="retentionDays"
+              name="retentionDays"
+              type="number"
+              min="1"
+              max="365"
+              required
+            />
+            <div class="callout">
+              <p>Credenciais de banco, e-mail e criptografia são configuradas no servidor.</p>
+            </div>
+            <p><button class="primary" type="submit">Salvar configurações</button></p>
+          </form>
+        </section>
+        <section class="panel" id="quotes-panel" aria-labelledby="quotes-title" hidden>
+          <div class="section-top">
+            <h2 id="quotes-title">Solicitações de orçamento</h2>
+            <button id="refresh" type="button">Atualizar lista</button>
+          </div>
+          <p class="muted">
+            Os contatos aparecem parcialmente ocultos. Abra uma solicitação para consultar os
+            detalhes.
+          </p>
+          <ul class="quotes-list" id="quotes-list"></ul>
+          <nav class="pagination" aria-label="Páginas de solicitações">
+            <button id="previous" type="button" disabled>Anterior</button>
+            <span id="page-label" aria-live="polite">Página 1</span>
+            <button id="next" type="button">Próxima</button>
+          </nav>
+        </section>
+      </div>
+
+      <!-- O conteúdo do cliente é inserido como texto pelo script do painel. -->
+      <dialog id="quote-dialog" aria-labelledby="dialog-title">
+        <div class="section-top">
+          <h2 id="dialog-title">Detalhes da solicitação</h2>
+          <button id="close-dialog" type="button">Fechar</button>
+        </div>
+        <dl id="quote-details"></dl>
+        <p id="dialog-status" role="status" aria-live="polite"></p>
+        <div class="actions">
+          <button id="retry-notification" type="button">Reenviar notificação</button>
+          <button class="danger" id="delete-quote" type="button">Excluir solicitação</button>
+        </div>
+      </dialog>
+    </main>
+    <footer>PVcoding Studio <a href="/">Voltar ao site</a></footer>
+  </body>
+</html>
