@@ -1,0 +1,1386 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="#111315" name="theme-color" />
+    <meta
+      data-marca-descricao="Conheça a {nome} Barbearia, veja os serviços e escolha um horário para cuidar do cabelo e da barba."
+      content="Apresentação visual da Don Marco Barbearia: início, serviços, galeria e informações. Sem agendamentos ou contas."
+      name="description"
+    />
+    <title data-marca-titulo="{nome} Barbearia | Corte, barba e agendamento">
+      Don Marco Barbearia — demonstração visual | PVcoding Studio
+    </title>
+    <link href="assets/css/fontes.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/base.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/components.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/agendamento.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/responsivo.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/avaliacoes.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/servicos.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/informacoes.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/inicio.css?v=rar-20261025" rel="stylesheet" />
+    <link href="assets/css/acesso.css?v=rar-20261025" rel="stylesheet" />
+
+    <link href="assets/css/backend.css?v=rar-20261025" rel="stylesheet" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="assets/css/demonstracao.css?v=rar-20261025" />
+  </head>
+  <body class="cliente-page demo-page">
+    <header class="demo-banner">
+      <div>
+        <strong>Demonstração visual</strong
+        ><span id="demo-notice"
+          >Don Marco Barbearia. Apresentação do layout, com dados ilustrativos. Não realiza
+          agendamentos.</span
+        >
+      </div>
+      <a href="/meu-site/#projetos">Voltar ao portfólio</a>
+    </header>
+
+    <div class="app-shell">
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-brand" data-marca-logo-slot="">
+          <svg aria-hidden="true" class="brand-scissors" data-marca-icone="">
+            <use href="assets/img/icones.svg#tesoura"></use>
+          </svg>
+          <span class="brand-name" data-marca="{nome}" data-marca-maiuscula=""> DON MARCO </span>
+          <span class="brand-caption"> BARBEARIA </span>
+        </div>
+        <nav aria-label="Menu da barbearia" class="sidebar-links">
+          <a class="side-link active" href="#inicio">
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/img/icones.svg#casa"></use>
+            </svg>
+            Início
+          </a>
+          <a class="side-link" href="#agendamento">
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/img/icones.svg#agenda"></use>
+            </svg>
+            Agendamento
+          </a>
+          <a class="side-link" href="#catalogo-servicos">
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/img/icones.svg#tesoura"></use>
+            </svg>
+            Serviços
+          </a>
+          <a class="side-link" href="#barbeiros">
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/img/icones.svg#equipe"></use>
+            </svg>
+            Nossos barbeiros
+          </a>
+          <a class="side-link" href="#informacoes">
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/img/icones.svg#etiqueta"></use>
+            </svg>
+            Informações
+          </a>
+          <a class="side-link" href="#avaliacoes">
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/img/icones.svg#estrela"></use>
+            </svg>
+            Avaliações
+          </a>
+        </nav>
+        <div class="sidebar-promo">
+          <div class="sidebar-promo-shade"></div>
+          <div class="sidebar-promo-content">
+            <span>
+              Mais que um corte,
+              <br />
+              uma experiência.
+            </span>
+            <i> </i>
+            <small>
+              TRADIÇÃO
+              <br />
+              ESTILO
+              <br />
+              CONFIANÇA
+            </small>
+          </div>
+        </div>
+        <span class="sidebar-footer"> Feito para quem valoriza os detalhes. </span>
+      </aside>
+
+      <div class="page-content">
+        <header class="topbar">
+          <a
+            data-marca-logo-slot=""
+            data-marca-label="{nome}, voltar ao início"
+            aria-label="Don Marco, voltar ao início"
+            class="mobile-brand"
+            href="#inicio"
+          >
+            <svg class="icon" data-marca-icone="" aria-hidden="true">
+              <use href="assets/img/icones.svg#tesoura"></use>
+            </svg>
+            <span>
+              <span data-marca="{nome}" data-marca-maiuscula="">DON MARCO</span>
+              <small> BARBEARIA </small>
+            </span>
+          </a>
+          <div class="topbar-right">
+            <span class="topbar-location">
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/img/icones.svg#local"></use>
+              </svg>
+              <span data-endereco="cidadeUf">São Paulo · SP</span>
+            </span>
+            <span class="topbar-separator"> </span>
+            <span class="topbar-guest" data-marca="Bem-vindo à {nome}">Demonstração visual</span>
+            <button
+              class="ghost-button account-open"
+              id="openCustomerAccount"
+              type="button"
+              disabled=""
+              aria-describedby="demo-notice"
+            >
+              Minha conta
+            </button>
+            <span class="avatar-mini" data-marca-iniciais=""> DM </span>
+          </div>
+        </header>
+
+        <main class="booking-layout">
+          <section class="home-page" id="inicio" aria-labelledby="homeTitle">
+            <div class="home-intro">
+              <div class="home-copy">
+                <p class="overline">BEM-VINDO À NOSSA BARBEARIA</p>
+                <h1 id="homeTitle">Seu corte, do jeito que você gosta.</h1>
+                <p class="home-lead">
+                  Do corte de sempre à vontade de mudar, a gente começa entendendo o que você quer.
+                </p>
+                <p>
+                  Traga uma foto, conte como costuma usar o cabelo ou peça uma sugestão. Aqui, tem
+                  espaço para conversar sobre o corte e cuidar da barba também.
+                </p>
+                <div class="home-actions">
+                  <a class="primary-button" href="#agendamento"
+                    >Agendar meu horário
+                    <svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#seta"></use></svg></a
+                  ><a class="home-services-link" href="#catalogo-servicos"
+                    >Conhecer os serviços <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </div>
+              <figure class="home-photo">
+                <img
+                  src="assets/img/hero-cliente.webp"
+                  alt="Imagem ilustrativa de um cliente durante um atendimento de cabelo e barba"
+                  width="900"
+                  height="620"
+                  decoding="async"
+                />
+                <figcaption>Imagem ilustrativa de atendimento.</figcaption>
+              </figure>
+            </div>
+            <div class="home-first-visit">
+              <div>
+                <span class="overline">É SUA PRIMEIRA VISITA?</span>
+                <h2>Conheça a casa antes de chegar.</h2>
+                <p>
+                  Veja um pouco sobre a barbearia e consulte o endereço para planejar sua visita.
+                </p>
+              </div>
+              <a class="text-link" href="#informacoes"
+                >Sobre a barbearia e localização <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </section>
+          <section class="service-catalog" id="catalogo-servicos" aria-labelledby="catalogTitle">
+            <header class="catalog-heading">
+              <div>
+                <p class="overline" data-marca="SERVIÇOS DA {nome}" data-marca-maiuscula="">
+                  SERVIÇOS DA DON MARCO
+                </p>
+                <h2 id="catalogTitle">O que vamos cuidar hoje?</h2>
+                <p>
+                  Pode ser o corte de sempre, uma barba mais curta ou só acertar o pezinho. Conheça
+                  cada serviço e escolha o que faz sentido para a sua visita.
+                </p>
+              </div>
+              <a class="text-link" href="#servicos"
+                >Já sei o que quero <span aria-hidden="true">→</span></a
+              >
+            </header>
+            <div class="catalog-list" id="catalogList">
+              <article class="catalog-card" aria-labelledby="catalog-corte">
+                <div class="catalog-photo">
+                  <img
+                    src="assets/img/corte-barba.jpg"
+                    alt="Referência ilustrativa de um cliente recebendo acabamento no corte de cabelo"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="600"
+                  /><span class="catalog-category"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#tesoura"></use></svg
+                    >Cabelo</span
+                  >
+                </div>
+                <div class="catalog-card-body">
+                  <div class="catalog-card-heading">
+                    <h3 id="catalog-corte">Corte de cabelo</h3>
+                    <span class="catalog-duration"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      ><span><span class="sr-only">Duração estimada: </span>45 min</span></span
+                    >
+                  </div>
+                  <p class="catalog-description">
+                    Quer manter o corte ou experimentar outro? A gente conversa sobre o comprimento,
+                    as laterais e como você costuma arrumar o cabelo no dia a dia.
+                  </p>
+                  <h4>O que está incluído</h4>
+                  <ul class="catalog-includes">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Corte na tesoura ou na máquina</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Ajuste das laterais e do comprimento</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Acabamento e finalização</span>
+                    </li>
+                  </ul>
+                  <p class="catalog-indication">
+                    Para renovar o corte ou manter o que já combina com você.
+                  </p>
+                  <div class="catalog-card-footer">
+                    <div><span>Valor do serviço</span><strong>R$ 50,00</strong></div>
+                    <button
+                      class="primary-button"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      Quero este
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#seta"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
+              <article class="catalog-card" aria-labelledby="catalog-barba">
+                <div class="catalog-photo">
+                  <img
+                    src="assets/img/corte-classico.jpg"
+                    alt="Referência ilustrativa de um barbeiro aparando a barba de um cliente com tesoura"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="600"
+                  /><span class="catalog-category"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#barba"></use></svg
+                    >Barba</span
+                  >
+                </div>
+                <div class="catalog-card-body">
+                  <div class="catalog-card-heading">
+                    <h3 id="catalog-barba">Barba</h3>
+                    <span class="catalog-duration"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      ><span><span class="sr-only">Duração estimada: </span>30 min</span></span
+                    >
+                  </div>
+                  <p class="catalog-description">
+                    Da barba mais curta à mais cheia, o cuidado começa por entender o que você quer
+                    manter. Depois, é acertar o volume, desenhar os contornos e cuidar do
+                    acabamento.
+                  </p>
+                  <h4>O que está incluído</h4>
+                  <ul class="catalog-includes">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Ajuste do comprimento e do volume</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Desenho dos contornos</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Cuidado com toalha quente</span>
+                    </li>
+                  </ul>
+                  <p class="catalog-indication">
+                    Para deixar a barba em dia sem perder o formato que você gosta.
+                  </p>
+                  <div class="catalog-card-footer">
+                    <div><span>Valor do serviço</span><strong>R$ 40,00</strong></div>
+                    <button
+                      class="primary-button"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      Quero este
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#seta"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
+              <article class="catalog-card" aria-labelledby="catalog-combo">
+                <div class="catalog-photo">
+                  <img
+                    src="assets/img/hero-cliente.webp"
+                    alt="Referência ilustrativa de cabelo penteado para trás e barba alinhada durante atendimento"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="600"
+                  /><span class="catalog-category"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#tesoura"></use></svg
+                    >Cabelo + barba</span
+                  >
+                </div>
+                <div class="catalog-card-body">
+                  <div class="catalog-card-heading">
+                    <h3 id="catalog-combo">Combo completo</h3>
+                    <span class="catalog-duration"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      ><span><span class="sr-only">Duração estimada: </span>1h 15min</span></span
+                    >
+                  </div>
+                  <p class="catalog-description">
+                    Se o cabelo e a barba estão pedindo atenção, dá para cuidar dos dois na mesma
+                    visita. A gente combina o corte e o formato da barba com você antes de começar.
+                  </p>
+                  <h4>O que está incluído</h4>
+                  <ul class="catalog-includes">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Corte de cabelo completo</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Barba com toalha quente</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Acabamento do cabelo e da barba</span>
+                    </li>
+                  </ul>
+                  <p class="catalog-indication">
+                    Para quem prefere resolver cabelo e barba de uma vez.
+                  </p>
+                  <div class="catalog-card-footer">
+                    <div><span>Valor do serviço</span><strong>R$ 80,00</strong></div>
+                    <button
+                      class="primary-button"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      Quero este
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#seta"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
+              <article class="catalog-card" aria-labelledby="catalog-acabamento">
+                <div class="catalog-photo">
+                  <img
+                    src="assets/img/instrumentos-barbearia.jpg"
+                    alt="Referência ilustrativa de máquinas, tesoura e pente organizados em uma bancada"
+                    loading="lazy"
+                    decoding="async"
+                    width="900"
+                    height="600"
+                  /><span class="catalog-category"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#maquina"></use></svg
+                    >Manutenção</span
+                  >
+                </div>
+                <div class="catalog-card-body">
+                  <div class="catalog-card-heading">
+                    <h3 id="catalog-acabamento">Acabamento</h3>
+                    <span class="catalog-duration"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      ><span><span class="sr-only">Duração estimada: </span>20 min</span></span
+                    >
+                  </div>
+                  <p class="catalog-description">
+                    O corte ainda está bom, mas o pezinho já cresceu? O acabamento cuida da nuca,
+                    das costeletas e dos contornos para manter o visual até a próxima visita.
+                  </p>
+                  <h4>O que está incluído</h4>
+                  <ul class="catalog-includes">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Acerto do pezinho e da nuca</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Alinhamento das costeletas</span>
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#checar"></use></svg
+                      ><span>Finalização dos contornos</span>
+                    </li>
+                  </ul>
+                  <p class="catalog-indication">
+                    Para pequenos ajustes. Não inclui um novo corte de cabelo.
+                  </p>
+                  <div class="catalog-card-footer">
+                    <div><span>Valor do serviço</span><strong>R$ 25,00</strong></div>
+                    <button
+                      class="primary-button"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      Quero este
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#seta"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <p class="catalog-note">
+              Fotos ilustrativas. Valores e tempos de referência desta demonstração; a duração pode
+              variar conforme o atendimento.
+            </p>
+            <div class="catalog-help">
+              <div class="catalog-help-intro">
+                <span class="service-icon" aria-hidden="true"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#tesoura"></use></svg
+                ></span>
+                <h3>Ficou na dúvida?</h3>
+                <p>
+                  Você não precisa saber o nome do corte. Uma foto de referência e uma conversa já
+                  ajudam a explicar o que tem em mente.
+                </p>
+                <a class="text-link" href="#barbeiros"
+                  >Conheça nossos barbeiros <span aria-hidden="true">→</span></a
+                >
+              </div>
+              <div class="catalog-questions" aria-label="Dúvidas sobre os serviços">
+                <details>
+                  <summary>Posso levar uma foto do corte?</summary>
+                  <p>
+                    Claro. Ela ajuda a mostrar o comprimento, o formato e o acabamento que você
+                    procura. O barbeiro pode conversar com você sobre como adaptar a referência ao
+                    seu cabelo.
+                  </p>
+                </details>
+                <details>
+                  <summary>Acabamento é a mesma coisa que corte?</summary>
+                  <p>
+                    O acabamento acerta o pezinho, a nuca e as costeletas. Para mudar o comprimento,
+                    refazer o degradê ou ajustar o formato do cabelo, escolha o corte completo.
+                  </p>
+                </details>
+                <details>
+                  <summary>O que acontece quando escolho um serviço?</summary>
+                  <p>
+                    O serviço aparece no resumo e você pode seguir para a escolha do barbeiro, da
+                    data e do horário. Nesta versão demonstrativa, nenhuma reserva é enviada à
+                    barbearia.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </section>
+          <section class="experience-section" id="avaliacoes" aria-labelledby="experienceTitle">
+            <header class="experience-heading">
+              <div>
+                <p class="overline" data-marca="POR AQUI, NA {nome}" data-marca-maiuscula="">
+                  POR AQUI, NA DON MARCO
+                </p>
+                <h2 id="experienceTitle">Um bom corte começa com uma boa conversa.</h2>
+                <p>
+                  Tem quem queira manter o corte de sempre. Tem quem chegue querendo mudar. O
+                  primeiro passo é ouvir você.
+                </p>
+              </div>
+              <a class="text-link" href="#barbeiros"
+                >Conheça quem vai te atender <span aria-hidden="true">↗</span></a
+              >
+            </header>
+            <div class="experience-gallery" aria-label="Galeria de referências de cortes e barba">
+              <figure class="experience-shot">
+                <button
+                  class="gallery-photo"
+                  type="button"
+                  data-gallery-photo=""
+                  aria-label="Ampliar foto: corte e acabamento"
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  <img
+                    src="assets/img/corte-barba.jpg"
+                    alt="Cliente recebendo acabamento na lateral do cabelo, com degradê e barba desenhada"
+                    width="900"
+                    height="1348"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="photo-expand" aria-hidden="true">↗</span>
+                </button>
+                <figcaption>
+                  <span class="overline">NA CADEIRA</span>
+                  <h3>Só acertar os detalhes.</h3>
+                  <p>
+                    Baixar um pouco a lateral, manter em cima. Vale explicar do seu jeito ou mostrar
+                    uma foto.
+                  </p>
+                </figcaption>
+              </figure>
+              <figure class="experience-shot">
+                <button
+                  class="gallery-photo"
+                  type="button"
+                  data-gallery-photo=""
+                  aria-label="Ampliar foto: corte clássico"
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  <img
+                    src="assets/img/hero-cliente.webp"
+                    alt="Cliente com cabelo penteado para trás e barba alinhada durante atendimento na barbearia"
+                    width="900"
+                    height="620"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="photo-expand" aria-hidden="true">↗</span>
+                </button>
+                <figcaption>
+                  <span class="overline">DO SEU JEITO</span>
+                  <h3>O de sempre também tem seu valor.</h3>
+                  <p>
+                    Se você já encontrou seu corte, a ideia é cuidar dele. Se quiser mudar, a gente
+                    conversa.
+                  </p>
+                </figcaption>
+              </figure>
+              <figure class="experience-shot">
+                <button
+                  class="gallery-photo"
+                  type="button"
+                  data-gallery-photo=""
+                  aria-label="Ampliar foto: cuidado com a barba"
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  <img
+                    src="assets/img/corte-classico.jpg"
+                    alt="Barbeiro aparando a barba de um cliente com tesoura em uma cadeira reclinada"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="photo-expand" aria-hidden="true">↗</span>
+                </button>
+                <figcaption>
+                  <span class="overline">BARBA EM DIA</span>
+                  <h3>Aparar, alinhar e cuidar.</h3>
+                  <p>
+                    Mais curta ou mais cheia? O contorno e o comprimento precisam fazer sentido para
+                    você.
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            <p class="experience-disclaimer">
+              Galeria ilustrativa de estilos e atendimento. As imagens não representam clientes da
+              <span data-marca="{nome}">Don Marco</span>.
+            </p>
+            <div class="experience-details">
+              <article class="barbershop-story" aria-labelledby="storyTitle">
+                <img
+                  src="assets/img/hero-ambiente.webp"
+                  alt="Imagem ilustrativa do interior de uma barbearia, com cadeiras e iluminação acolhedora"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="story-copy">
+                  <p class="overline">UM POUCO SOBRE NÓS</p>
+                  <h3 id="storyTitle">Pode chegar e ficar à vontade.</h3>
+                  <p>
+                    A gente quer que você se sinta à vontade desde a primeira visita. Conte como
+                    costuma usar o cabelo, o que gosta e o que prefere evitar. É dessa conversa que
+                    o corte começa a tomar forma.
+                  </p>
+                  <p>
+                    Gosta de trocar uma ideia? Ótimo. Prefere aproveitar o momento em silêncio? Tudo
+                    bem também. O atendimento deve respeitar o seu jeito.
+                  </p>
+                  <ul class="story-values" aria-label="Nossa proposta">
+                    <li>Ouvir antes de cortar</li>
+                    <li>Combinar os detalhes</li>
+                    <li>Respeitar seu jeito</li>
+                  </ul>
+                  <a class="text-link" href="#barbeiros"
+                    >Conheça nossos barbeiros <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </article>
+              <section class="experience-reviews" aria-labelledby="reviewsTitle">
+                <div class="experience-reviews-heading">
+                  <div>
+                    <p class="overline">AVALIAÇÕES</p>
+                    <h3 id="reviewsTitle">O que fica depois do corte.</h3>
+                  </div>
+                  <span class="experience-rating" aria-label="Nota ilustrativa: 4,9 de 5"
+                    >4,9 <span aria-hidden="true">★★★★★</span><small>Nota ilustrativa</small></span
+                  >
+                </div>
+                <figure class="testimonial">
+                  <div class="testimonial-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                  <blockquote>
+                    “Expliquei como queria e ele foi conferindo comigo durante o corte. Gostei de
+                    poder falar sem ficar sem jeito.”
+                  </blockquote>
+                  <figcaption>Sobre ser ouvido <span>Depoimento demonstrativo</span></figcaption>
+                </figure>
+                <figure class="testimonial">
+                  <div class="testimonial-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                  <blockquote>
+                    “Fui para acertar o cabelo e aproveitei para fazer a barba. Saí satisfeito com
+                    os dois. Me senti à vontade por lá.”
+                  </blockquote>
+                  <figcaption>Sobre se sentir bem <span>Depoimento demonstrativo</span></figcaption>
+                </figure>
+              </section>
+            </div>
+            <div class="experience-cta">
+              <div>
+                <span class="overline">QUANDO QUISER, É SÓ CHEGAR</span>
+                <h3>Vamos cuidar do seu próximo corte?</h3>
+                <p>Escolha o serviço e veja um horário que encaixe no seu dia.</p>
+              </div>
+              <a class="primary-button" href="#servicos"
+                >Ver serviços e horários
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/img/icones.svg#seta"></use></svg
+              ></a>
+            </div>
+          </section>
+          <section class="shop-info" id="informacoes" aria-labelledby="shopInfoTitle">
+            <header class="shop-info-intro">
+              <div class="shop-info-welcome">
+                <p class="overline" data-marca="CONHEÇA A {nome}" data-marca-maiuscula="">
+                  CONHEÇA A DON MARCO
+                </p>
+                <h2 id="shopInfoTitle" data-informacoes="titulo">
+                  Antes de chegar, conheça um pouco da casa.
+                </h2>
+                <p data-informacoes="descricao">
+                  Escolher uma barbearia também é escolher com quem você se sente à vontade. Por
+                  aqui, a proposta é simples: ouvir o que você tem em mente e combinar os detalhes
+                  antes de começar.
+                </p>
+                <a class="text-link" href="#agendamento"
+                  >Ir para o agendamento <span aria-hidden="true">→</span></a
+                >
+              </div>
+              <figure class="shop-info-photo">
+                <img
+                  data-informacoes-foto=""
+                  src="assets/img/hero-ambiente.webp"
+                  alt="Referência ilustrativa de um ambiente de barbearia com cadeiras e espelhos"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption data-informacoes="legenda">
+                  Uma referência do ambiente que inspira o projeto.
+                </figcaption>
+              </figure>
+            </header>
+            <div class="shop-info-grid">
+              <article class="shop-about" aria-labelledby="shopAboutTitle">
+                <p class="overline">NOSSO JEITO DE ATENDER</p>
+                <h3 id="shopAboutTitle">Primeiro a conversa. Depois, a tesoura.</h3>
+                <p>
+                  Cada pessoa tem um jeito de usar o cabelo e cuidar da barba. Tem quem goste do
+                  corte bem marcado, quem prefira algo mais discreto e quem ainda esteja descobrindo
+                  o que combina consigo.
+                </p>
+                <p>
+                  A <span data-marca="{nome}">Don Marco</span> foi pensada para receber esses jeitos
+                  diferentes. Você pode trazer uma referência, explicar com suas palavras ou pedir
+                  uma opinião. A ideia é chegar a um resultado que faça sentido também fora da
+                  cadeira, na sua rotina.
+                </p>
+                <p>
+                  O cuidado passa pelo corte de cabelo, pela barba, pelo combo dos dois e pelo
+                  acabamento entre uma visita e outra.
+                </p>
+                <div class="shop-about-links">
+                  <a class="text-link" href="#catalogo-servicos"
+                    >Conhecer os serviços <span aria-hidden="true">→</span></a
+                  ><a class="text-link" href="#barbeiros"
+                    >Ver quem vai me atender <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+              <section class="shop-location" aria-labelledby="shopLocationTitle">
+                <div class="shop-location-heading">
+                  <span class="shop-info-icon" aria-hidden="true"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#local"></use></svg
+                  ></span>
+                  <div>
+                    <p class="overline">ONDE ENCONTRAR</p>
+                    <h3 id="shopLocationTitle">
+                      <span data-marca="{nome}">Don Marco</span>, em
+                      <span data-endereco="bairro">Pinheiros</span>.
+                    </h3>
+                  </div>
+                </div>
+                <address>
+                  <span data-endereco="logradouro">Rua Teodoro Sampaio</span>,
+                  <strong data-endereco="numero">1024</strong
+                  ><span data-endereco="complementoLinha"></span><br /><span data-endereco="bairro"
+                    >Pinheiros</span
+                  >
+                  · <span data-endereco="cidade">São Paulo</span> /
+                  <span data-endereco="uf">SP</span><span data-endereco="cepLinha"></span>
+                </address>
+                <p class="shop-address-note">Confira a localização no mapa antes de sair.</p>
+                <a
+                  data-endereco-mapa=""
+                  class="shop-map-link"
+                  rel="noopener noreferrer"
+                  aria-disabled="true"
+                  >Consultar endereço no Google Maps <span aria-hidden="true">↗</span
+                  ><span class="info-sr-only"> (abre em uma nova aba)</span></a
+                >
+                <div class="shop-visit-note">
+                  <h4>Antes de sair de casa</h4>
+                  <p>
+                    Confira o endereço e o horário escolhido. Se é sua primeira visita, reserve um
+                    tempinho para o trajeto e para conversar sobre o corte.
+                  </p>
+                </div>
+              </section>
+            </div>
+            <section class="shop-visit" aria-labelledby="shopVisitTitle">
+              <header>
+                <p class="overline">PARA SUA PRÓXIMA VISITA</p>
+                <h3 id="shopVisitTitle">Do seu jeito, desde a escolha do horário.</h3>
+              </header>
+              <ol class="shop-visit-steps">
+                <li>
+                  <span aria-hidden="true">01</span>
+                  <div>
+                    <h4>Veja o que você precisa</h4>
+                    <p>
+                      Corte, barba, os dois ou só o acabamento. Na aba Serviços, você encontra o que
+                      está incluído, os valores e o tempo estimado.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span aria-hidden="true">02</span>
+                  <div>
+                    <h4>Escolha quem vai atender</h4>
+                    <p>
+                      Conheça os barbeiros e selecione o profissional com quem deseja marcar sua
+                      visita.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span aria-hidden="true">03</span>
+                  <div>
+                    <h4>Encontre um horário no seu dia</h4>
+                    <p>
+                      Na aba Agendamento, escolha a data e o horário. Confira o resumo antes de
+                      continuar.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+            <div class="shop-info-cta">
+              <div>
+                <p class="overline">VAMOS COMBINAR SUA VISITA?</p>
+                <h3>Agora é escolher um horário para você.</h3>
+                <p>O serviço, o barbeiro e os detalhes ficam juntos no resumo.</p>
+              </div>
+              <a class="primary-button" href="#agendamento"
+                >Ir para agendamento
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/img/icones.svg#seta"></use></svg
+              ></a>
+            </div>
+            <p class="shop-info-demo">
+              Esta é uma demonstração de front-end. Imagens, valores e horários são ilustrativos;
+              nenhum agendamento é enviado à barbearia.
+            </p>
+          </section>
+          <section aria-labelledby="heroTitle" class="hero demo-booking-hero" id="agendamento">
+            <div aria-hidden="true" class="hero-room"></div>
+            <div aria-hidden="true" class="hero-person"></div>
+            <div aria-hidden="true" class="hero-darken"></div>
+            <div class="hero-copy">
+              <p class="eyebrow">
+                BARBA
+                <span> · </span>
+                ESTILO
+                <span> · </span>
+                ATITUDE
+              </p>
+              <h2 id="heroTitle">Agende seu horário</h2>
+              <p>
+                Escolha o serviço, o barbeiro e o melhor horário.
+                <br />
+                Aqui, cuidar de você é coisa séria.
+              </p>
+              <div class="gold-rule"></div>
+            </div>
+            <div class="hero-quote">
+              O seu estilo
+              <br />
+              faz parte da
+              <br />
+              história.
+            </div>
+          </section>
+          <div class="booking-main">
+            <div aria-label="Etapas do agendamento" class="progress-steps">
+              <span class="step current">
+                <b> 1 </b>
+                <em> Serviço </em>
+              </span>
+              <i> </i>
+              <span class="step">
+                <b> 2 </b>
+                <em> Barbeiro </em>
+              </span>
+              <i> </i>
+              <span class="step">
+                <b> 3 </b>
+                <em> Data e horário </em>
+              </span>
+              <i> </i>
+              <span class="step">
+                <b> 4 </b>
+                <em> Confirmação </em>
+              </span>
+            </div>
+            <section aria-labelledby="servicosTitle" class="booking-section" id="servicos">
+              <div class="section-heading">
+                <h2 id="servicosTitle">Escolha o serviço</h2>
+                <a class="text-link" href="#catalogo-servicos">
+                  Ver serviços
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#seta"></use>
+                  </svg>
+                </a>
+              </div>
+              <div
+                aria-label="Serviços disponíveis"
+                class="services-grid"
+                id="servicesList"
+                role="group"
+              >
+                <article class="service-card selected">
+                  <span class="selection-ring" aria-hidden="true"></span
+                  ><span class="service-icon"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#tesoura"></use></svg
+                  ></span>
+                  <strong>Corte de cabelo</strong
+                  ><span class="description">Corte personalizado com acabamento premium.</span>
+                  <span class="service-footer"
+                    ><b>R$ 50,00</b
+                    ><span
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      >45 min</span
+                    ></span
+                  >
+                </article>
+                <article class="service-card">
+                  <span class="selection-ring" aria-hidden="true"></span
+                  ><span class="service-icon"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#barba"></use></svg
+                  ></span>
+                  <strong>Barba</strong
+                  ><span class="description">Modelagem e cuidado com toalha quente.</span>
+                  <span class="service-footer"
+                    ><b>R$ 40,00</b
+                    ><span
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      >30 min</span
+                    ></span
+                  >
+                </article>
+                <article class="service-card">
+                  <span class="selection-ring" aria-hidden="true"></span
+                  ><span class="service-icon"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#tesoura"></use></svg
+                  ></span>
+                  <strong>Combo completo</strong
+                  ><span class="description">Corte + barba com condição especial.</span>
+                  <span class="service-footer"
+                    ><b>R$ 80,00</b
+                    ><span
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      >1h 15min</span
+                    ></span
+                  >
+                </article>
+                <article class="service-card">
+                  <span class="selection-ring" aria-hidden="true"></span
+                  ><span class="service-icon"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#maquina"></use></svg
+                  ></span>
+                  <strong>Acabamento</strong
+                  ><span class="description">Contorno, pezinho e finalização.</span>
+                  <span class="service-footer"
+                    ><b>R$ 25,00</b
+                    ><span
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use></svg
+                      >20 min</span
+                    ></span
+                  >
+                </article>
+              </div>
+            </section>
+            <section aria-labelledby="barbeirosTitle" class="booking-section" id="barbeiros">
+              <div class="section-heading">
+                <h2 id="barbeirosTitle">Escolha o barbeiro</h2>
+                <a class="text-link" href="#barbeiros">
+                  Conheça a equipe
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#seta"></use>
+                  </svg>
+                </a>
+              </div>
+              <div
+                aria-label="Profissionais disponíveis"
+                class="barbers-grid"
+                id="barbersList"
+                role="group"
+              >
+                <article class="barber-card selected">
+                  <span class="selection-ring" aria-hidden="true"></span>
+                  <img
+                    class="barber-avatar"
+                    src="assets/img/barbeiro-rafael.webp"
+                    width="64"
+                    height="84"
+                    alt="Retrato ilustrativo de Rafael Lima"
+                    loading="lazy"
+                  />
+                  <span class="barber-details"
+                    ><strong>Rafael Lima</strong
+                    ><span class="rating"><span aria-hidden="true">★</span> 4,9 (312)</span
+                    ><small>Especialista em cortes modernos.</small></span
+                  >
+                </article>
+                <article class="barber-card">
+                  <span class="selection-ring" aria-hidden="true"></span>
+                  <img
+                    class="barber-avatar"
+                    src="assets/img/barbeiro-bruno.webp"
+                    width="64"
+                    height="84"
+                    alt="Retrato ilustrativo de Bruno Alves"
+                    loading="lazy"
+                  />
+                  <span class="barber-details"
+                    ><strong>Bruno Alves</strong
+                    ><span class="rating"><span aria-hidden="true">★</span> 4,8 (280)</span
+                    ><small>Barba e estética masculina.</small></span
+                  >
+                </article>
+                <article class="barber-card">
+                  <span class="selection-ring" aria-hidden="true"></span>
+                  <img
+                    class="barber-avatar"
+                    src="assets/img/barbeiro-caio.webp"
+                    width="64"
+                    height="84"
+                    alt="Retrato ilustrativo de Caio Monteiro"
+                    loading="lazy"
+                  />
+                  <span class="barber-details"
+                    ><strong>Caio Monteiro</strong
+                    ><span class="rating"><span aria-hidden="true">★</span> 4,9 (190)</span
+                    ><small>Especialista em degradê.</small></span
+                  >
+                </article>
+                <article class="barber-card">
+                  <span class="selection-ring" aria-hidden="true"></span>
+                  <img
+                    class="barber-avatar"
+                    src="assets/img/barbeiro-lucas.webp"
+                    width="64"
+                    height="84"
+                    alt="Retrato ilustrativo de Lucas Rocha"
+                    loading="lazy"
+                  />
+                  <span class="barber-details"
+                    ><strong>Lucas Rocha</strong
+                    ><span class="rating"><span aria-hidden="true">★</span> 4,7 (158)</span
+                    ><small>Cortes clássicos e contemporâneos.</small></span
+                  >
+                </article>
+              </div>
+            </section>
+            <div class="date-time-grid">
+              <section aria-labelledby="dataTitle" class="booking-section date-section">
+                <div class="section-heading date-heading">
+                  <h2 id="dataTitle">Escolha a data</h2>
+                  <div class="date-controls">
+                    <button
+                      aria-label="Semana anterior"
+                      class="date-nav"
+                      id="prevWeek"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#voltar"></use>
+                      </svg>
+                    </button>
+                    <span id="monthLabel">Outubro 2026</span>
+                    <button
+                      aria-label="Próxima semana"
+                      class="date-nav"
+                      id="nextWeek"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      <svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#avancar"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div aria-label="Escolha um dia" class="date-list" id="datesList" role="group">
+                  <div class="date-pill"><span>SEG</span><strong>26</strong></div>
+                  <div class="date-pill"><span>TER</span><strong>27</strong></div>
+                  <div class="date-pill selected"><span>QUA</span><strong>28</strong></div>
+                  <div class="date-pill"><span>QUI</span><strong>29</strong></div>
+                  <div class="date-pill"><span>SEX</span><strong>30</strong></div>
+                  <div class="date-pill"><span>SÁB</span><strong>31</strong></div>
+                  <div class="date-pill"><span>DOM</span><strong>1</strong></div>
+                </div>
+              </section>
+              <section aria-labelledby="horaTitle" class="booking-section times-section">
+                <div class="section-heading times-heading">
+                  <h2 id="horaTitle">
+                    <svg class="icon sun-icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#sol"></use>
+                    </svg>
+                    Horários disponíveis
+                  </h2>
+                  <div aria-label="Período" class="shift-tabs" role="group">
+                    <button
+                      data-shift="manha"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      Manhã
+                    </button>
+                    <button
+                      class="active"
+                      data-shift="tarde"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      Tarde
+                    </button>
+                    <button
+                      data-shift="noite"
+                      type="button"
+                      disabled=""
+                      aria-describedby="demo-notice"
+                    >
+                      Noite
+                    </button>
+                  </div>
+                </div>
+                <div aria-label="Horários do dia" class="time-slots" id="timeSlots" role="group">
+                  <span class="time-slot">13:00</span><span class="time-slot">13:30</span
+                  ><span class="time-slot">14:00</span><span class="time-slot">14:30</span
+                  ><span class="time-slot selected">15:00</span><span class="time-slot">15:30</span
+                  ><span class="time-slot">16:00</span><span class="time-slot">16:30</span
+                  ><span class="time-slot">17:00</span><span class="time-slot">17:30</span>
+                </div>
+              </section>
+            </div>
+            <section
+              aria-labelledby="mobileSummaryTitle"
+              class="mobile-booking-summary"
+              id="mobileSummary"
+            >
+              <div class="summary-card">
+                <div class="summary-heading">
+                  <h2 id="mobileSummaryTitle">Resumo do agendamento</h2>
+                  <button type="button" disabled="" aria-describedby="demo-notice">
+                    Editar
+                    <svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#editar"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-icon"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#tesoura"></use></svg
+                  ></span>
+                  <div class="summary-copy">
+                    <small>Serviço</small><strong>Corte de cabelo</strong>
+                  </div>
+                  <div class="summary-secondary">
+                    <strong>R$ 50,00</strong
+                    ><small
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="assets/img/icones.svg#relogio"></use>
+                      </svg>
+                      45 min</small
+                    >
+                  </div>
+                </div>
+                <div class="summary-row">
+                  <img
+                    class="summary-avatar"
+                    src="assets/img/barbeiro-rafael.webp"
+                    width="39"
+                    height="39"
+                    alt=""
+                  />
+                  <div class="summary-copy">
+                    <small>Barbeiro</small><strong>Rafael Lima</strong>
+                  </div>
+                  <div class="summary-secondary">
+                    <span class="rating"><span aria-hidden="true">★</span> 4,9</span>
+                  </div>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-icon"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#agenda"></use></svg
+                  ></span>
+                  <div class="summary-copy">
+                    <small>Data e horário</small
+                    ><strong>Quarta-feira, 28 de outubro de 2026<br />às 15:00</strong>
+                  </div>
+                </div>
+                <div class="summary-total"><span>Valor total</span><strong>R$ 50,00</strong></div>
+                <button
+                  type="button"
+                  class="primary-button"
+                  disabled=""
+                  aria-describedby="demo-notice"
+                >
+                  Confirmar agendamento
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#seta"></use>
+                  </svg>
+                </button>
+                <p class="security-note">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#cadeado"></use>
+                  </svg>
+                  Layout demonstrativo. Nenhum horário é reservado.
+                </p>
+              </div>
+            </section>
+          </div>
+          <aside aria-label="Resumo e informações" class="booking-aside">
+            <section aria-labelledby="summaryTitle" class="summary-card" id="summaryCard">
+              <div class="summary-heading">
+                <h2 id="summaryTitle">Resumo do agendamento</h2>
+                <button type="button" disabled="" aria-describedby="demo-notice">
+                  Editar
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#editar"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="summary-row">
+                <span class="summary-icon"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#tesoura"></use></svg
+                ></span>
+                <div class="summary-copy">
+                  <small>Serviço</small><strong>Corte de cabelo</strong>
+                </div>
+                <div class="summary-secondary">
+                  <strong>R$ 50,00</strong
+                  ><small
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="assets/img/icones.svg#relogio"></use>
+                    </svg>
+                    45 min</small
+                  >
+                </div>
+              </div>
+              <div class="summary-row">
+                <img
+                  class="summary-avatar"
+                  src="assets/img/barbeiro-rafael.webp"
+                  width="39"
+                  height="39"
+                  alt=""
+                />
+                <div class="summary-copy"><small>Barbeiro</small><strong>Rafael Lima</strong></div>
+                <div class="summary-secondary">
+                  <span class="rating"><span aria-hidden="true">★</span> 4,9</span>
+                </div>
+              </div>
+              <div class="summary-row">
+                <span class="summary-icon"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="assets/img/icones.svg#agenda"></use></svg
+                ></span>
+                <div class="summary-copy">
+                  <small>Data e horário</small
+                  ><strong>Quarta-feira, 28 de outubro de 2026<br />às 15:00</strong>
+                </div>
+              </div>
+              <div class="summary-total"><span>Valor total</span><strong>R$ 50,00</strong></div>
+              <button
+                type="button"
+                class="primary-button"
+                disabled=""
+                aria-describedby="demo-notice"
+              >
+                Confirmar agendamento
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/img/icones.svg#seta"></use>
+                </svg>
+              </button>
+              <p class="security-note">
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/img/icones.svg#cadeado"></use>
+                </svg>
+                Layout demonstrativo. Nenhum horário é reservado.
+              </p>
+            </section>
+            <section class="address-card">
+              <div>
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/img/icones.svg#local"></use>
+                </svg>
+                <span>
+                  <strong data-marca="{nome} Barbearia"> Don Marco Barbearia </strong>
+                  <small>
+                    <span data-endereco="linha1">Rua Teodoro Sampaio, 1024</span>
+                    <br />
+                    <span data-endereco="linha2">Pinheiros · São Paulo/SP</span>
+                  </small>
+                </span>
+              </div>
+              <img
+                alt="Interior ilustrativo da barbearia"
+                loading="lazy"
+                src="assets/img/fachada.webp"
+              />
+            </section>
+            <section class="review-card" aria-label="Resumo das avaliações">
+              <div class="review-head">
+                <strong> Avaliações dos nossos clientes </strong>
+                <span> Nota ilustrativa </span>
+              </div>
+              <div class="review-content">
+                <span class="review-score">
+                  4,9
+                  <small> ★★★★★ </small>
+                </span>
+                <blockquote>
+                  “Atendimento cuidadoso e ambiente incrível.”
+                  <cite> Depoimento demonstrativo </cite>
+                </blockquote>
+              </div>
+              <a class="text-link reviews-preview-link" href="#avaliacoes"
+                >Um pouco da nossa barbearia <span aria-hidden="true">↗</span></a
+              >
+            </section>
+          </aside>
+        </main>
+        <footer class="desktop-footer">
+          ©
+          <span id="currentYear">2026</span>
+          <span data-marca="{nome}">Don Marco</span> Barbearia. Protótipo visual de agendamento.
+        </footer>
+      </div>
+    </div>
+    <nav aria-label="Navegação rápida" class="mobile-tabbar">
+      <a class="selected" href="#inicio">
+        <svg class="icon" aria-hidden="true">
+          <use href="assets/img/icones.svg#casa"></use>
+        </svg>
+        Início
+      </a>
+      <a href="#agendamento">
+        <svg class="icon" aria-hidden="true">
+          <use href="assets/img/icones.svg#agenda"></use>
+        </svg>
+        Agendar
+      </a>
+      <a href="#catalogo-servicos">
+        <svg class="icon" aria-hidden="true">
+          <use href="assets/img/icones.svg#tesoura"></use>
+        </svg>
+        Serviços
+      </a>
+      <a href="#barbeiros">
+        <svg class="icon" aria-hidden="true">
+          <use href="assets/img/icones.svg#equipe"></use>
+        </svg>
+        Barbeiros
+      </a>
+    </nav>
+  </body>
+</html>

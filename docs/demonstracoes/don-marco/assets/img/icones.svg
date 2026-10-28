@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="tesoura" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 21 21M14.2 9.8 21 3M8.1 15.9 12.5 11.5"/></symbol>
+  <symbol id="casa" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="agenda" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15l2 2 5-5"/></symbol>
+  <symbol id="relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="pessoa" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2z"/></symbol>
+  <symbol id="equipe" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20v-1a7 7 0 0 1 14 0v1zM16 5a3 3 0 0 1 0 6M17 14a6 6 0 0 1 5 6"/></symbol>
+  <symbol id="etiqueta" viewBox="0 0 24 24"><path d="M3 3h11l7 7v11H10l-7-7z"/><circle cx="9" cy="9" r="1"/></symbol>
+  <symbol id="estrela" viewBox="0 0 24 24"><path d="m12 2.5 3 6.3 7 .9-5 5 1.2 7-6.2-3.3-6.2 3.3 1.2-7-5-5 7-.9z"/></symbol>
+  <symbol id="galeria" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 4 4 3-3 5 5"/></symbol>
+  <symbol id="local" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="seta" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="voltar" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+  <symbol id="avancar" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol>
+  <symbol id="editar" viewBox="0 0 24 24"><path d="m4 16-1 5 5-1L20 8a3 3 0 0 0-4-4Z"/><path d="m14 6 4 4"/></symbol>
+  <symbol id="menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="fechar" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+  <symbol id="checar" viewBox="0 0 24 24"><path d="m4 12 5 5 11-11"/></symbol>
+  <symbol id="grafico" viewBox="0 0 24 24"><path d="M3 21h18M6 18V9M12 18V3M18 18v-7"/></symbol>
+  <symbol id="ajustes" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></symbol>
+  <symbol id="sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></symbol>
+  <symbol id="cadeado" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="sino" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 8-3 8-3 10h18c0-2-3-2-3-10M10 21h4"/></symbol>
+  <symbol id="mais" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="carteira" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M3 10h18M7 3h11"/></symbol>
+  <symbol id="aviso" viewBox="0 0 24 24"><path d="M12 3 2 21h20zM12 9v5m0 3v.5"/></symbol>
+  <symbol id="barba" viewBox="0 0 24 24"><path d="M4 8c0 10 3 12 8 13 5-1 8-3 8-13-3 4-5 4-8 2-3 2-5 2-8-2Z"/><path d="M8 13c2-2 3-2 4 0 1-2 2-2 4 0"/></symbol>
+  <symbol id="maquina" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="15" rx="2"/><path d="M8 3v3m3-3v3m3-3v3m3-3v3M10 10h4"/></symbol>
+  <symbol id="configuracoes" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+</svg>

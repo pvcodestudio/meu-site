@@ -1,0 +1,217 @@
+/* Complementos exclusivos da apresentação fictícia no portfólio. */
+:root {
+  --demo-bar-height: 62px;
+  --brand-primary: #155e75;
+  --brand-accent: #0f766e;
+}
+[hidden] {
+  display: none !important;
+}
+.demo-banner {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: var(--demo-bar-height);
+  padding: 10px clamp(18px, 4vw, 54px);
+  border-bottom: 1px solid #ffffff22;
+  background: #102333;
+  color: #f0f6fb;
+  font:
+    12px/1.5 system-ui,
+    sans-serif;
+}
+.demo-banner strong,
+.demo-banner span {
+  display: block;
+}
+.demo-banner span {
+  color: #bbcedc;
+  font-size: 11px;
+}
+.demo-banner > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: 1px solid #8bb7cc;
+  border-radius: 7px;
+  color: #e5f4ff;
+  text-decoration: none;
+}
+.demo-page .brand-logo-shell {
+  width: 72px;
+  height: 72px;
+}
+.demo-page .brand-logo-shell img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.demo-page .user-badge {
+  display: block;
+}
+.demo-page .form-panel {
+  top: calc(var(--demo-bar-height) + 18px);
+}
+.demo-page .header-actions {
+  flex-wrap: wrap;
+}
+.demo-page #authenticatedApp .header-actions .btn {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--surface-2);
+}
+.demo-page #authenticatedApp .header-nav-wrap .tab.active,
+.demo-page #authenticatedApp .header-nav-wrap .tab.active:hover {
+  color: #fff;
+  border-color: #155e75;
+  background: #155e75;
+  box-shadow: none;
+}
+.demo-page [role='tabpanel'] {
+  min-width: 0;
+  outline-offset: 6px;
+}
+.demo-page [role='tabpanel'] .workspace-toolbar p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.demo-page button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.demo-page :is(input, textarea)[readonly],
+.demo-page select:disabled {
+  opacity: 1;
+  color: var(--text);
+  cursor: default;
+}
+/* A indentação do HTML não deve virar recuo nem quebra de linha dentro das mensagens. */
+.demo-page #authenticatedApp .card-text {
+  white-space: normal;
+  text-align: left;
+  text-indent: 0;
+}
+.demo-page .card-actions {
+  flex-wrap: wrap;
+}
+.demo-message-count {
+  margin: 16px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.demo-check-items {
+  display: grid;
+  gap: 13px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+.demo-check-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.demo-check-items input {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  accent-color: var(--primary);
+}
+.demo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.demo-preview-grid > .panel {
+  min-width: 0;
+  padding: 22px;
+}
+.demo-preview-grid p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.demo-page .email-message-item {
+  cursor: default;
+}
+.demo-page .email-reader-body {
+  padding: 24px;
+  line-height: 1.9;
+}
+.demo-footnote {
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.demo-page :focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+.demo-page .demo-banner :focus-visible {
+  outline-color: #fff;
+}
+@media (max-width: 760px) {
+  :root {
+    --demo-bar-height: 82px;
+  }
+  .demo-banner {
+    gap: 12px;
+  }
+  .demo-banner > a {
+    font-size: 10px;
+  }
+  .demo-page #authenticatedApp .topbar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .demo-page #authenticatedApp .brand-area {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .demo-page #authenticatedApp .header-actions {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+    flex-wrap: wrap;
+  }
+  .demo-page #authenticatedApp .header-nav-wrap {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    min-width: 0;
+  }
+  .demo-preview-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .demo-page .form-panel {
+    position: static;
+  }
+  .demo-page .checklists-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .demo-page .email-client-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

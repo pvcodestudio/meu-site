@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="840" viewBox="0 0 1440 840" fill="none">
+  <defs>
+    <linearGradient id="network" x1="760" y1="700" x2="1400" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6c8fe8" stop-opacity=".16"/>
+      <stop offset=".5" stop-color="#81c9df" stop-opacity=".46"/>
+      <stop offset="1" stop-color="#62d9b5" stop-opacity=".22"/>
+    </linearGradient>
+    <linearGradient id="blueprint" x1="0" y1="0" x2="290" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8daac8" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#8daac8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Fine architectural outlines at the edge of the composition. -->
+  <g stroke="url(#blueprint)">
+    <path d="M0 30h270v158H0M0 46h270M17 38h3m8 0h3m8 0h3M0 64h94v72H0m0-72 94 72M0 136l94-72M112 68h130m-130 9h84m-84 18h118m-118 9h101m-101 9h115m-115 9h72M0 155h242m-242 10h184M0 210h152v125H0m0-107h152M12 242h54v48H12zm0 0 54 48m-54 0 54-48m15-43h103v9H81zM81 242h54m-54 10h41m-41 17h54m-54 10h46m-46 11h33"/>
+  </g>
+  <!-- Abstract connections; decorative, with no implied performance metrics. -->
+  <g stroke="url(#network)" stroke-width="1">
+    <path d="m850 208 128-79 130 77 132-52 122 120-77 143 103 83-163 100-99-63-121 115-116-42-54-147 79-129-44-126Z"/>
+    <path d="m978 129 24 192 106-115 30 156 102-208m-405 299 167-132 136 41 147 55-60 183m-336 10 113-143 103 185m-170-199 167-91 88 175-130 52"/>
+    <path d="m1126 537 12-175 250 138M978 129l160 233M1005 652l-3-185"/>
+  </g>
+  <g fill="#243e50" stroke="#99cee4" stroke-opacity=".42">
+    <circle cx="978" cy="129" r="8"/>
+    <circle cx="1240" cy="154" r="5"/>
+    <circle cx="1362" cy="274" r="10"/>
+    <circle cx="1388" cy="500" r="6"/>
+    <circle cx="1225" cy="600" r="7"/>
+    <circle cx="1005" cy="652" r="7"/>
+    <circle cx="889" cy="610" r="6" fill="#416a9e"/>
+    <circle cx="835" cy="463" r="4"/>
+    <circle cx="1002" cy="321" r="4"/>
+    <circle cx="1138" cy="362" r="5"/>
+  </g>
+</svg>

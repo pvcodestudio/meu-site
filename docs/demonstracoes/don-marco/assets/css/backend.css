@@ -1,0 +1,140 @@
+:root[data-tema='grafite'] {
+  --bg: #111417;
+  --bg-deep: #0b0d10;
+  --surface: #1a2026;
+  --surface-soft: #222a33;
+  --gold: #9fb9d5;
+  --gold-bright: #c6ddf5;
+  --gold-faint: rgba(159, 185, 213, 0.12);
+  --stroke: #384451;
+}
+:root[data-tema='oliva'] {
+  --bg: #121510;
+  --bg-deep: #0c0f0a;
+  --surface: #1c2118;
+  --surface-soft: #252d20;
+  --gold: #b5bf85;
+  --gold-bright: #dbe5af;
+  --gold-faint: rgba(181, 191, 133, 0.12);
+  --stroke: #3b4533;
+}
+html[data-tema]:not([data-tema='classico']) .primary-button {
+  background: linear-gradient(100deg, var(--gold), var(--gold-bright));
+}
+html[data-tema]:not([data-tema='classico']) .sidebar {
+  background: linear-gradient(160deg, var(--surface), var(--bg-deep));
+}
+html[data-tema]:not([data-tema='classico']) .owner-panel {
+  background: var(--surface);
+  border-color: var(--stroke);
+}
+.backend-settings {
+  margin-bottom: 24px;
+}
+.account-dialog {
+  width: min(480px, calc(100% - 28px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  padding: 24px;
+}
+.account-dialog::backdrop {
+  background: #000b;
+}
+.account-dialog h2 {
+  font: 500 27px/1.3 var(--font-display);
+}
+.account-dialog label {
+  display: block;
+  font-size: 12px;
+  margin: 14px 0 6px;
+}
+.account-dialog input:not([type='checkbox']) {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--stroke);
+  border-radius: 7px;
+}
+.account-dialog input:focus-visible {
+  outline: 2px solid var(--gold);
+}
+.account-dialog p,
+.account-dialog small {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.account-dialog .account-check {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.account-check input {
+  margin-top: 4px;
+}
+.account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.account-actions button {
+  min-height: 44px;
+}
+.account-message {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.account-dialog .text-link {
+  border: 0;
+  background: none;
+  padding: 8px 0;
+  color: var(--gold);
+  min-height: 44px;
+}
+.my-booking {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--stroke);
+}
+.my-booking strong {
+  display: block;
+}
+.account-open {
+  min-height: 44px;
+}
+.privacy-text {
+  white-space: pre-line;
+}
+.app-status {
+  padding: 18px;
+  color: var(--gold);
+}
+.appointment-main {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#testMail {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  max-height: 260px;
+  overflow: auto;
+}
+@media (max-width: 650px) {
+  .account-dialog {
+    padding: 20px 16px;
+  }
+  .account-dialog input:not([type='checkbox']) {
+    font-size: 16px;
+  }
+  .account-open {
+    font-size: 11px;
+    padding: 8px;
+  }
+}
